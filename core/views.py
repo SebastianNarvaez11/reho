@@ -21,7 +21,7 @@ from django.core.mail import EmailMessage
 def index(request):
     if not Business.objects.all():
         Business.objects.create(nombre='nombreempresa', lema='lemaempresa', logo='null',
-                                email='email@gmail.com', direccion='direccionempresa', telefono='123456',
+                                email='email@gmail.com', direccion='direccionempresa', telefonos='123456', wpp='31231',
                                 horarios='horariosbusiness', descripcion='', mision='', vision='',
                                 historia='', creacion='', edicion='')
         return redirect('business_urldash:create', pk=1)
