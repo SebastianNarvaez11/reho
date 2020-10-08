@@ -1,0 +1,193 @@
+{% extends 'core/about.html' %}
+{% load static %}
+
+{% block title %}Tapicería y Restauración de Muebles | REHO{% endblock title %}
+{% block title_banner %}Blog{% endblock title_banner %}
+
+<!--================About Area =================-->
+{% block content %}
+
+<!--================Blog Categorie Area =================-->
+{% block head %}
+<section class="blog_categorie_area">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="categories_post contenedor">
+                    <img src="{% static 'core/img/blog/cat-post/cat-post-3.jpg'%}" class="imagen-blog-tips" alt="post">
+                    <div class="categories_details">
+                        <div class="categories_text">
+                            <a href="#">
+                                <h5>Tips</h5>
+                            </a>
+                            <div class="border_line"></div>
+                            <p>Los mejores tips para tus muebles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="categories_post contenedor">
+                    <img src="{% static 'core/img/blog/cat-post/cat-post-2.jpg'%}" class="imagen-blog-tips" alt="post">
+                    <div class="categories_details">
+                        <div class="categories_text">
+                            <a href="#">
+                                <h5>Consejos</h5>
+                            </a>
+                            <div class="border_line"></div>
+                            <p>Consejos de utilidad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="categories_post contenedor">
+                    <img src="{% static 'core/img/blog/cat-post/cat-post-1.jpg'%}" class="imagen-blog-tips" alt="post">
+                    <div class="categories_details">
+                        <div class="categories_text">
+                            <a href="#">
+                                <h5>Novedades</h5>
+                            </a>
+                            <div class="border_line"></div>
+                            <p>Lo ultimo en estilo de muebles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock head%}
+<!--================Blog Categorie Area =================-->
+
+<!--================Blog Area =================-->
+<section class="blog_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog_left_sidebar">
+                    {% block post %}
+                    {% for post in posts %}
+                    <article class="row blog_item">
+                        <div class="col-md-3">
+                            <div class="blog_info text-right">
+                                <div class="post_tag">
+                                    <a href="#">Food,</a>
+                                    <a class="active" href="#">Technology,</a>
+                                    <a href="#">Politics,</a>
+                                    <a href="#">Lifestyle</a>
+                                </div>
+                                <ul class="blog_meta list">
+                                    <li><a href="#">{{post.autor}}<i class="lnr lnr-user"></i></a></li>
+                                    <li><a href="#">{{post.publicacion}}<i class="lnr lnr-calendar-full"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-9 contenedor">
+                            <div class="blog_post">
+                                <img src="{{post.imagen.url}}" class="imagen-blog" alt="">
+                                <div class="blog_details">
+                                    <a href="{% url 'detallepost' post.slug %}">
+                                        <h2>{{post.titulo}}</h2>
+                                    </a>
+                                    <p>{{post.descripcion}}</p>
+                                    <a href="{% url 'detallepost' post.slug %}" class="blog_btn">LEER MAS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                    {% endblock post%}
+                    {%block nav%}
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            {% if posts.has_previous %}
+                            <li class="page-item">
+                                <a href="?page=1" class="page-link">1</a>
+                            </li>
+
+                            <li class="page-item">
+                                <a href="?page={{ posts.previous_page_number }}" class="page-link"
+                                    aria-label="Previous"><i class="fas fa-angle-left"></i></a>
+                            </li>
+                            {% endif %}
+
+                            <span class="current mr-2 mt-2">
+                                Pagina {{ posts.number }} de {{ posts.paginator.num_pages }}
+                            </span>
+
+                            {% if posts.has_next %}
+                            <li class="page-item">
+                                <a href="?page={{ posts.next_page_number }}" class="page-link" aria-label="Next">
+                                    <i class="fas fa-angle-right"></i></a>
+                            </li>
+
+                            <li class="page-item">
+                                <a href="?page={{ posts.paginator.num_pages }}"
+                                    class="page-link">{{ posts.paginator.num_pages }}</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    {%endblock nav%}
+                </div>
+            </div>
+            {%block sidebar%}
+            <div class="col-lg-4 mb-5">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget search_widget">
+                        <form action="" method="GET">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name='buscar' placeholder="Buscar Posts">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i
+                                            class="lnr lnr-magnifier"></i></button>
+                                </span>
+                            </div>
+                        </form><!-- /input-group -->
+                        <div class="br"></div>
+                    </aside>
+                    <aside class="single_sidebar_widget popular_post_widget">
+                        <h3 class="widget_title">Post Recientes</h3>
+                        {% for post in posts|slice:":3" %}
+                        <div class="media post_item contenedor">
+                            <img src="{{post.imagen.url}}" class="imagen-blog-recientes" alt="post">
+                            <div class="media-body">
+                                <a href="{% url 'detallepost' post.slug %}">
+                                    <h3>{{post.titulo}}</h3>
+                                </a>
+                                <p>{{post.creacion}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                        <div class="br"></div>
+                    </aside>
+                    
+                    <aside class="single-sidebar-widget newsletter_widget">
+                        <h4 class="widget_title">Suscribete</h4>
+                        <p>
+                            Here, I focus on a range of items and features that we use in life without
+                            giving them a second thought.
+                        </p>
+                        <form method="post" id="contactForm">
+                            {% csrf_token %}
+                            <div class="form-group d-flex flex-row">
+                                <div class="input-group">
+                                    {{formulario.email}}
+                                </div>
+                                <button class="bbtns">Enviar</button>
+                            </div>
+                        </form>
+                        <p class="text-bottom">You can unsubscribe at any time</p>
+                        <div class="br"></div>
+                    </aside>
+                </div>
+            </div>
+            {%endblock sidebar%}
+        </div>
+    </div>
+</section>
+{% endblock content %}
+<!--================End Clients Logo Area =================-->

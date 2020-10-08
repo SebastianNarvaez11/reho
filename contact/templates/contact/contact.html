@@ -1,0 +1,85 @@
+{% extends 'core/about.html' %}
+{% load static %}
+
+{% block title %}Tapicería y Restauración de Muebles | REHO{% endblock title %}
+{% block title_banner %}Contactenos{% endblock title_banner %}
+
+<!--================About Area =================-->
+{% block content %}
+<section class="contact_area p_120">
+  <div class="container">
+    <div class="main_title">
+      <h2>Contactanos y envianos tu Cotización</h2>
+      <p>Tenemos múltiples canales de atención, puedes usar el formulario a continuación para enviarnos tu cotización, te
+        responderemos lo más pronto posible. También puedes escribirnos a nuestro Whatsapp para una cotización mas
+        rápida.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div id="mapBox" class="mapBox">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15931.005771377007!2d-76.5132174!3d3.4106643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x54d5cd7316b9dd58!2sRestauramos%20Hogares!5e0!3m2!1ses!2sco!4v1601649066036!5m2!1ses!2sco"
+        width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+        tabindex="0"></iframe>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="contact_info">
+          <div class="info_item">
+            <i class="fas fa-home"></i>
+            <h6>Cali, Valle del Cauca</h6>
+            <p>{{BUSINESS.direccion}}</p>
+          </div>
+          <div class="info_item">
+            <i class="fas fa-phone"></i>
+            <h6>{{BUSINESS.telefonos}}</h6>
+            <p>{{BUSINESS.horarios}}</p>
+          </div>
+          <div class="info_item mb-4">
+            <i class="fab fa-whatsapp"></i>
+            <h6>{{BUSINESS.wpp}}</h6>
+          </div>
+          <div class="info_item">
+            <i class="fas fa-envelope"></i>
+            <h6>{{BUSINESS.email}}</h6>
+            <p>Escribanos!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        {% if 'ok' in request.GET %}
+        <p><b>El mensaje se envio con exito</b></p>
+        {% endif %}
+
+        <form class="row contact_form" action="" method="post" id="contactForm" novalidate="novalidate">
+          {% csrf_token %}
+          <div class="col-md-6">
+            <div class="form-group">
+              {{formulario.nombre}}
+              {{formulario.nombre.errors}}
+            </div>
+            <div class="form-group">
+              {{formulario.email}}
+              {{formulario.email.errors}}
+            </div>
+            <div class="form-group">
+              {{formulario.asunto}}
+              {{formulario.asunto.errors}}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              {{formulario.contenido}}
+              {{formulario.contenido.errors}}
+            </div>
+          </div>
+          <div class="col-md-12 text-right">
+            <button type="submit" value="submit" class="btn submit_btn">Enviar Cotización</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
+<!--================End Clients Logo Area =================-->

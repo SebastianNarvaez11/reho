@@ -1,0 +1,198 @@
+{% extends 'core/about.html' %}
+{% load static %}
+
+{% block title %}Tapicería y Restauración de Muebles | REHO{% endblock title %}
+{% block title_banner %}Materiales{% endblock title_banner %}
+
+<!--================About Area =================-->
+{% block content %}
+<section class="about_area p_120">
+	<div class="container">
+		<div class="main_title">
+			<h2>Usamos materiales de alta calidad</h2>
+			<p>En Restauramos Hogares empleamos materiales de excelente calidad, buscando elegancia y confort en nuestro resultados, sin olvidarnos del medio ambiente.</p>
+		</div>
+		<div class="row d-flex justify-content-between">
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<a href="#telas">
+					<div class="text-center icons-material">
+						<img src="{% static 'core/img/icons/tela.png' %}" alt="tela">
+						<p style="font-size: 20px;"><b>Telas</b></p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<a href="#pinturas">
+					<div class="text-center icons-material">
+						<img src="{% static 'core/img/icons/barniz.png' %}" alt="pintura">
+						<p style="font-size: 20px;"><b>Pinturas</b></p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<a href="#maderas">
+					<div class="text-center icons-material">
+						<img src="{% static 'core/img/icons/madera.png' %}" alt="maderas">
+						<p style="font-size: 20px;"><b>Maderas</b></p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="telas_area p_40" id="telas">
+	<div class="container">
+		<div class="impress_inner text-center">
+			<h2 style="font-size: 50px;" ">Telas</h2>
+		</div>
+	</div>
+</section>
+
+<section class=" furniture_area p_120">
+				<div class="container">
+					<div class="furniture_inner row">
+						{% for material in telas %}
+						<div class="col-lg-6">
+							<div class="row mt-5">
+								<div class="col-lg-6">
+									<a href="{% url 'detallematerial' material.slug  %}">
+										<div class="furniture_item">
+											<div class="contenedor">
+												<img class="img-fluid imagen-trabajo" src="{{ material.imagen1.url }}"
+													alt="">
+											</div>
+											<h4>{{ material.titulo }}</h4>
+										</div>
+									</a>
+								</div>
+								<div class="col-lg-6">
+									<div class="portfolio_right_text">
+										<h4><b>{{material.titulo}}</b> </h4>
+										<p style="text-align: justify;">{{material.descripcion}}.</p>
+										<ul class="list">
+											<li><span>Calidad</span>:
+												<i class="fa fa-star" style="color : #facb48;"></i>
+												<i class="fa fa-star" style="color : #facb48;"></i>
+												<i class="fa fa-star" style="color : #facb48;"></i>
+												<i class="fa fa-star" style="color : #facb48;"></i>
+												<i class="fa fa-star" style="color : #facb48;"></i>
+											</li>
+											<li><span>Fecha</span>: {{material.creacion}}</li>
+										</ul>
+										<a class="banner_btn mt-3"
+											href="{% url 'detallematerial' material.slug  %}">SABER MAS</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+</section>
+
+<section class="pinturas_area p_40" id="pinturas">
+	<div class="container">
+		<div class="impress_inner text-center">
+			<h2 style="font-size: 50px;">Pinturas</h2>
+		</div>
+	</div>
+</section>
+
+
+<section class=" furniture_area p_120">
+	<div class="container">
+		<div class="furniture_inner row">
+			{% for material in pinturas %}
+			<div class="col-lg-6">
+				<div class="row mt-5">
+					<div class="col-lg-6">
+						<a href="{% url 'detallematerial' material.slug  %}">
+							<div class="furniture_item">
+								<div class="contenedor">
+									<img class="img-fluid imagen-trabajo" src="{{ material.imagen1.url }}"
+										alt="">
+								</div>
+								<h4>{{ material.titulo }}</h4>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-6">
+						<div class="portfolio_right_text">
+							<h4><b>{{material.titulo}}</b> </h4>
+							<p style="text-align: justify;">{{material.descripcion}}.</p>
+							<ul class="list">
+								<li><span>Calidad</span>:
+									<i class="fa fa-star" style="color : #facb48;"></i>
+									<i class="fa fa-star" style="color : #facb48;"></i>
+									<i class="fa fa-star" style="color : #facb48;"></i>
+									<i class="fa fa-star" style="color : #facb48;"></i>
+									<i class="fa fa-star" style="color : #facb48;"></i>
+								</li>
+								<li><span>Fecha</span>: {{material.creacion}}</li>
+							</ul>
+							<a class="banner_btn mt-3"
+								href="{% url 'detallematerial' material.slug  %}">SABER MAS</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+
+<section class="maderas_area p_40" id="maderas">
+	<div class="container">
+		<div class="impress_inner text-center">
+			<h2 style="font-size: 50px;">Maderas</h2>
+		</div>
+	</div>
+</section>
+
+
+<section class=" furniture_area p_120">
+	<div class="container">
+		<div class="furniture_inner row">
+			{% for material in maderas %}
+			<div class="col-lg-6">
+				<div class="row mt-5">
+					<div class="col-lg-6">
+						<a href="{% url 'detallematerial' material.slug  %}">
+							<div class="furniture_item">
+								<div class="contenedor">
+									<img class="img-fluid imagen-trabajo" src="{{ material.imagen1.url }}"
+										alt="">
+								</div>
+								<h4>{{ material.titulo }}</h4>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-6">
+						<div class="portfolio_right_text">
+							<h4><b>{{material.titulo}}</b> </h4>
+							<p style="text-align: justify;">{{material.descripcion}}.</p>
+							<ul class="list">
+								<li><span>Calidad</span>:
+									<i class="fa fa-star" style="color : #facb48;"></i>
+									<i class="fa fa-star" style="color : #facb48;"></i>
+									<i class="fa fa-star" style="color : #facb48;"></i>
+									<i class="fa fa-star" style="color : #facb48;"></i>
+									<i class="fa fa-star" style="color : #facb48;"></i>
+								</li>
+								<li><span>Fecha</span>: {{material.creacion}}</li>
+							</ul>
+							<a class="banner_btn mt-3"
+								href="{% url 'detallematerial' material.slug  %}">SABER MAS</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% endblock content %}
+<!--================End Clients Logo Area =================-->

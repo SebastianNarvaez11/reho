@@ -1,0 +1,139 @@
+{% extends 'core/about.html' %}
+{% load static %}
+
+{% block title %}Tapicería y Restauración de Muebles | REHO{% endblock title %}
+{% block title_banner %}Nuestros Trabajos{% endblock title_banner %}
+
+<!--================About Area =================-->
+{% block content %}
+<section class="about_area p_120">
+	<div class="container">
+		<div class="main_title">
+			<h2>Calidad Y Elegancia en nuestros trabajos</h2>
+			<p>En Restauramos Hogares trabajos con diferentes tipos de muebles, a continuación podrás encostrar nuestro
+				portafolio de trabajos realizados, para que te animes y le des una nueva oportunidad a esos muebles que
+				tanto aprecias.</p>
+		</div>
+		<div class="row d-flex justify-content-between">
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<a href="#restauraciones">
+					<div class="text-center icons-trabajo">
+						<img src="{% static 'core/img/icons/sillon (5).png' %}" alt="restauracion total">
+						<p style="font-size: 20px;"><b>Restauracion Total</b></p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<a href="#retapizados">
+					<div class="text-center icons-trabajo">
+						<img src="{% static 'core/img/icons/maquina-de-coser (1).png' %}" alt="pintura">
+						<p style="font-size: 20px;"><b>Retapizados</b></p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<a href="#fabricados">
+					<div class="text-center icons-trabajo">
+						<img src="{% static 'core/img/icons/sofa (4).png' %}" alt="tapiceria">
+						<p style="font-size: 20px;"><b>Fabricación</b></p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="restauracion_area p_40" id="restauraciones">
+	<div class="container">
+		<div class="impress_inner text-center">
+			<h2 style="font-size: 50px;" ">Restauración Total</h2>
+			<a class=" main_btn"
+				href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">
+				Cotizar</a>
+		</div>
+	</div>
+</section>
+
+<section class="furniture_area p_120">
+	<div class="container">
+		<div class="furniture_inner row">
+			{% for trabajo in restaurados %}
+			<div class="col-lg-4">
+				<a href="{% url 'detalletrabajo' trabajo.slug  %}">
+					<div class="furniture_item">
+						<div class="contenedor">
+							<img class="img-fluid imagen-trabajo" src="{{ trabajo.imagen1.url }}" alt="">
+						</div>
+						<h4>{{ trabajo.titulo }}</h4>
+					</div>
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+<section class="retapizado_area p_40" id="retapizados">
+	<div class="container">
+		<div class="impress_inner text-center">
+			<h2 style="font-size: 50px;">Retapizados</h2>
+			<a class="main_btn"
+				href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">Cotizar</a>
+		</div>
+	</div>
+</section>
+
+
+<section class="furniture_area p_120">
+	<div class="container">
+		<div class="furniture_inner row">
+			{% for trabajo in retapizados %}
+			<div class="col-lg-4">
+				<a href="{% url 'detalletrabajo' trabajo.slug  %}">
+					<div class="furniture_item">
+						<div class="contenedor">
+							<img class="img-fluid imagen-trabajo" src="{{ trabajo.imagen1.url }}" alt="">
+						</div>
+						<h4>{{ trabajo.titulo }}</h4>
+					</div>
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+
+<section class="fabricado_area p_40" id="fabricados">
+	<div class="container">
+		<div class="impress_inner text-center">
+			<h2 style="font-size: 50px;">Fabricados</h2>
+			<a class="main_btn"
+				href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">Cotizar</a>
+		</div>
+	</div>
+</section>
+
+
+<section class="furniture_area p_120">
+	<div class="container">
+		<div class="furniture_inner row">
+			{% for trabajo in fabricados %}
+			<div class="col-lg-4">
+				<a href="{% url 'detalletrabajo' trabajo.slug  %}">
+					<div class="furniture_item">
+						<div class="contenedor">
+							<img class="img-fluid imagen-trabajo" src="{{ trabajo.imagen1.url }}" alt="">
+						</div>
+						<h4>{{ trabajo.titulo }}</h4>
+					</div>
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+
+{% endblock content %}
+<!--================End Clients Logo Area =================-->

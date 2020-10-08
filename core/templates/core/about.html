@@ -1,0 +1,156 @@
+{% extends 'core/index.html' %}
+{% load static %}
+
+{% block title %}Tapicería y Restauración de Muebles | REHO{% endblock title %}
+
+<!--================Home Banner Area =================-->
+{% block banner %}
+<section class="banner_area">
+	<div class="banner_inner d-flex align-items-center">
+		<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background="">
+		</div>
+		<div class="container">
+			<div class="banner_content text-center">
+				<h2>{% block title_banner %}Nosotros{% endblock title_banner %}</h2>
+				<h1 style="font-size: 20px;">Tapicería y Restauración de Muebles</h1>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock banner %}
+<!--================End Home Banner Area =================-->
+
+<!--================About Area =================-->
+{% block content %}
+<section class="about_area p_120">
+	<div class="container">
+		<div class="about_inner row">
+			<div class="col-lg-6">
+				<div class="about_left_text">
+					<h6>Tapicería y Restauración de Muebles</h6>
+					<h3>{{BUSINESS.nombre}}</h3>
+					<p>{{BUSINESS.descripcion|safe}}</p>
+					<a class="main_btn" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZAR</a>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<img class="img-fluid" style="filter: drop-shadow(2px 4px 6px black);" src="{{BUSINESS.logo.url}}" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+<section class="about_area p_120">
+	<div class="container">
+		<div class="about_inner row">
+			<div class="col-lg-6">
+				<img class="img-fluid" src="{% static 'core/img/about-img (2).jpg'%}" alt="">
+			</div>
+			<div class="col-lg-6">
+				<div class="about_left_text">
+					<h6>Tapicería y Restauración de Muebles</h6>
+					<h3>NUESTRA VISIÓN</h3>
+					<p>{{BUSINESS.vision|safe}}</p>
+					<a class="main_btn" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZAR</a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</section>
+<section class="about_area p_120">
+	<div class="container">
+		<div class="about_inner row">
+			<div class="col-lg-6">
+				<div class="about_left_text">
+					<h6>Tapicería y Restauración de Muebles</h6>
+					<h3>NUESTRA MISIÓN</h3>
+					<p>{{BUSINESS.mision|safe}}</p>
+					<a class="main_btn" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZAR</a>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<img class="img-fluid" src="{% static 'core/img/about-img (3).jpg'%}" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+<!--================End About Area =================-->
+
+
+<!--================Feature Area =================-->
+<section class="feature_area p_120">
+	<div class="container">
+		<div class="main_title">
+			<h2>Cualidades Que Nos Hacen Únicos</h2>
+			<p>Somos un equipo dedicado a la fabricación de muebles tapizados, sofás, sillones, sofás a la medida
+				para hogar y empresas.</p>
+		</div>
+		<div class="row feature_inner">
+			<div class="col-lg-4 col-md-6">
+				<div class="feature_item">
+					<h4><i class="lnr lnr-user"></i>Personal Experto</h4>
+					<p>Nuestro equipo de tapiceros, ebanistas y costureros, están altamente capacitados en sus áreas</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="feature_item">
+					<h4><i class="lnr lnr-license"></i>Servicio Garantizado</h4>
+					<p>Todos nuestros trabajos, servicios y materiales se entregan con su correspondiente garantia.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="feature_item">
+					<h4><i class="lnr lnr-phone"></i>Asesoría</h4>
+					<p>Nuestro equipo de asesores están a su disposición para sacarlo de dudas y que puedas tomar la mejor decisión.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="feature_item">
+					<h4><i class="lnr lnr-rocket"></i>Puntualidad </h4>
+					<p>Recogemos y entregamos los muebles en la puerta de tu casa, con máxima puntualidad en la fecha acordadas.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="feature_item">
+					<h4><i class="lnr lnr-diamond"></i>Resultados de Calidad</h4>
+					<p>La calidad del resultado de nuestros trabajos es excepcional, te garantizamos una satisfacción total en tus muebles.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="feature_item">
+					<h4><i class="lnr lnr-leaf"></i>Ecológicos</h4>
+					<p>En REHO somos amigables con el medio ambiente, usamos materiales hechos de recursos renovables.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="about_area p_120">
+	<div class="container">
+		<div class="about_inner row">
+			<div class="col-lg-6">
+				<div class="about_left_text">
+					<h6>Tapicería y Restauración de Muebles</h6>
+					<h3>NUESTRA EXPERIENCIA</h3>
+					<p>{{BUSINESS.historia|safe}}</p>
+					<a class="main_btn" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZAR</a>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<img class="img-fluid" src="{% static 'core/img/about-img (1).jpg'%}" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--================End Feature Area =================-->
+
+
+{% endblock content %}
+<!--================End Clients Logo Area =================-->

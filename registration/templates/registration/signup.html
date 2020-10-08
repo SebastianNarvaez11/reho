@@ -1,0 +1,124 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+        <form id="formulario" action="{% url 'signup' %}" role="form" class="user" method="POST">
+            {% csrf_token %}
+            <div class="modal-header border-bottom-success">
+                <h5 class="modal-title" id="exampleModalLabel">Registrar Usuario</h5>
+                <i class="fas fa-user-plus fa-2x text-gray-300"></i>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-user" name="username" maxlength="15" minlength="5" autofocus
+                        required id="id_username" placeholder="Nombre de Usuario"
+                        value="{% if form.username.value %}{{form.username.value}}{%endif%}">
+                    <small class="text-danger"> {{ form.username.errors }}</small>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control form-control-user" required name="first_name"
+                            id="id_first_name" placeholder="Nombres" maxlength="20" minlength="2"
+                            value="{% if form.first_name.value %}{{form.first_name.value}}{%endif%}">
+                        <small class="text-danger"> {{ form.first_name.errors }}</small>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" required name="last_name"
+                            id="id_last_name" placeholder="Apellidos" maxlength="20" minlength="2"
+                            value="{% if form.last_name.value %}{{form.last_name.value}}{%endif%}">
+                    </div>
+                    <small class="text-danger"> {{ form.last_name.errors }}</small>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-user" required name="email" maxlength="254"
+                        id="id_email" placeholder="Email"
+                        value="{% if form.email.value %}{{form.email.value}}{%endif%}">
+                    <small class="text-danger"> {{ form.email.errors }}</small>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="password" class="form-control form-control-user" required name="password1"
+                            id="id_password1" placeholder="Contraseña"
+                            value="{% if form.password1.value %}{{form.password1.value}}{%endif%}">
+
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control form-control-user" required name="password2"
+                            id="id_password2" placeholder="Repite la contraseña">
+                    </div>
+                </div>
+                <div class="row">
+                    <small class="text-danger"> {{ form.password1.errors }}</small>
+                    <small class="text-danger"> {{ form.password2.errors }}</small>
+                </div>
+                <div class="row ">
+                    <div class="form-group col-xl-12 col-lg-12">
+                        <div class="custom-control custom-checkbox small">
+                            <input type="checkbox" class="custom-control-input" name="is_active" id="id_is_active"
+                                {% if user.is_active %} checked {% endif %}>
+                            <label class="custom-control-label" for="id_is_active">Activo</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        Permisos del usuario:
+                        {{form.groups}}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-bottom-success">
+                <div class="dropdown-divider"></div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-success">Registrar</button>
+                        <a href="#" onclick="return cerrar_modal()" class="btn btn-danger">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        var url = $('#formulario').attr("action");
+        var token = jQuery("[name=csrfmiddlewaretoken]").val();
+
+        $("form").submit(function (e) {
+            e.preventDefault();
+            //alert(token);
+            var formData = $("form").serializeArray();
+            //console.log(formData);
+            $.ajax({
+                url: url,
+                method: "POST",
+                headers: { 'X-CSRFToken': token },
+                data: formData,
+            })
+                .done(function (r, textStatus, xhr) {
+                    if (xhr.status = 200) {
+                        cerrar_modal()
+                        setTimeout('document.location.reload()', 1000);
+                        mensaje('Usuario creado satisfactoriamente', 'success');
+                    }
+                    else {
+                        mensaje(textStatus, 'error');
+                    }
+                }).fail(function (error) {
+                    var r = error.responseJSON
+                    for (var clave in r) {
+                        // Controlando que json realmente tenga esa propiedad
+                        if (r.hasOwnProperty(clave)) {
+                            // Mostrando en pantalla la clave junto a su valor
+                            var input = 'id_' + String(clave);
+                            document.getElementById(input).style.borderColor = "red";
+                            mensaje(String(r[clave]), 'error')
+                        }
+                    }
+                })
+        })
+    });
+</script>

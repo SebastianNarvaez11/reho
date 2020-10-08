@@ -1,0 +1,116 @@
+{% extends 'dash/base.html' %}
+{% load static %}
+{% block titulo %} Academico | Business {% endblock titulo %}
+{% block contenido %}
+<div class="container">
+    <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="font-weight-bold text-uppercase mb-1">
+                        Ingrese los datos de la institucion
+                    </div>
+                    <div class="dropdown-divider"></div>
+
+                    <form method="POST" class="user" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row ">
+                            <div class="form-group col-xl-6 col-lg-6">
+                                <input type="text" class="form-control form-control-user" required name="nombre"
+                                    id="id_nombre" placeholder="Nombre" value="{{business.nombre}}" maxlength="30"
+                                    minlength="7">
+                                <small class="text-danger"> {{ form.nombre.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-6 col-lg-6">
+                                <input type="text" class="form-control form-control-user" required name="lema"
+                                    id="id_lema" placeholder="Lema" value="{{business.lema}}" maxlength="50"
+                                    minlength="7">
+                                <small class="text-danger"> {{ form.lema.errors }}</small>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <input type="text" class="form-control form-control-user" required name="email"
+                                    id="id_email" placeholder="Email" value="{{business.email}}" maxlength="254">
+                                <small class="text-danger"> {{ form.email.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <input type="text" class="form-control form-control-user" required name="direccion"
+                                    id="id_direccion" placeholder="Direccion" value="{{business.direccion}}"
+                                    maxlength="30" minlength="7">
+                                <small class="text-danger">{{ form.direccion.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <input type="text" class="form-control form-control-user" required name="telefonos"
+                                    id="id_telefonos" placeholder="Telefonos" value="{{business.telefonos}}" maxlength="50"
+                                    minlength="5">
+                                <small class="text-danger">{{ form.telefonos.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <input type="text" class="form-control form-control-user" required name="wpp"
+                                    id="id_wpp" placeholder="Whatsapp" value="{{business.wpp}}" maxlength="50"
+                                    minlength="5">
+                                <small class="text-danger">{{ form.wpp.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <input type="text" class="form-control form-control-user" required name="horarios"
+                                    id="id_horarios" placeholder="Horarios" value="{{business.horarios}}"
+                                    maxlength="100" minlength="2">
+                                <small class="text-danger"> {{ form.horarios.errors }}</small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-12 col-lg-12">
+                                Descripción
+                                {{form.descripcion}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-12 col-lg-12">
+                                Misión
+                                {{form.mision}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-12 col-lg-12">
+                                Visión
+                                {{form.vision}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-12 col-lg-12">
+                                Historia
+                                {{form.historia}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-6 col-lg-6 col-mb-6 col-sm-6">
+                                Seleccione un logo:
+                                <br>
+                                {{form.logo}}
+                                <small class="text-danger"> {{ form.logo.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-6 col-lg-6 col-mb-6 col-sm-6">
+                                <div class="contenedor">
+                                    <a href="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
+                                        <img src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" height="100"
+                                            alt="...">
+                                    </a>
+                                    <br> Logo Actual
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="submit" class="btn btn-success">Actualizar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}

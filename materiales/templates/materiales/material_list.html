@@ -1,0 +1,76 @@
+{% extends 'dash/base.html' %}
+{% load static %}
+{% block titulo %} Academico | Servicios {% endblock titulo %}
+{% block contenido %}
+<div class="container">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Lista De Materiales</h6>
+            <a type="button" class="btn btn-outline-success" href="{% url 'materiales_dash:create' %}">
+                Crear Material <i class="fas fa-plus ml-2"></i>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                {% if not material_list %}
+                <div class="alert alert-info" role="alert">
+                    No hay materiales para mostrar
+                </div>
+                {% else %}
+                <table data-classes="table table-hover earning-box" data-toggle="table" data-search="true" id="table"
+                    data-show-export="true" data-pagination="true" data-show-fullscreen="true" data-locale="es-CL" 
+                    data-page-size="5"  data-page-list="[5, 10, 25, all]">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">¿ Inicio ?</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Creacion</th>
+                            <th scope="col">Edicion</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for material in material_list %}
+                        <tr>
+                            <td>{{material.titulo}}</td>
+                            <td>{{material.get_categoria_display}}</td>
+                            <td>{{material.index|yesno:"Si,No"}}</td>
+                            <td>{{material.estado|yesno:"Publico,Oculto"}}</td>
+                            <td>{{material.creacion|date:"d/m/y"}}</td>
+                            <td>{{material.edicion|date:"d/m/y"}}</td>
+                            <td><a href="{% url 'materiales_dash:update' material.id %}"
+                                    class="btn btn-warning btn-circle">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="#" onclick=" return abrir_modal('{% url 'materiales_dash:delete' material.id %}')"
+                                    class="btn btn-danger btn-circle">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- /.container-fluid -->
+{% endblock contenido %}
+
+{% block jscript %}
+<!-- Page level plugins -->
+<script src="{% static 'dash/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'dash/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'dash/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{% static 'dash/js/demo/datatables-demo.js' %}"></script>
+
+{% endblock jscript %}

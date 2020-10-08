@@ -1,0 +1,459 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
+    <title>{% block title %}Tapicería y Restauración de Muebles | REHO{% endblock title %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'core/vendors/linericon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/vendors/owl-carousel/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/vendors/lightbox/simpleLightbox.css' %}">
+    <link rel="stylesheet" href="{% static 'core/vendors/nice-select/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'core/vendors/animate-css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'core/vendors/flaticon/flaticon.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+        integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/responsive.css' %}">
+</head>
+
+<body>
+    <a id="app-whatsapp" target="_blanck"
+        href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!--================Header Menu Area =================-->
+    {% block header %}
+    <header class="header_area">
+        <div class="main_menu" id="mainNav">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="{% url 'index' %}">
+                        <img src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" height="60" alt="logo">
+                        <img src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" height="60" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item "><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+                            <li class="nav-item "><a class="nav-link" href="{% url 'about' %}">Nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Servicios</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'trabajos' %}">Trabajos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'materiales' %}">Materiales</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    {% endblock header %}
+    <!--================Header Menu Area =================-->
+
+    <!--================Home Banner Area =================-->
+    {% block banner %}
+    <section class="home_banner_area">
+        <div class="banner_inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="banner_content">
+                            <img class="logo-banner animate__animated animate__fadeIn"
+                                src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" alt="logo">
+                            <p class="p-banner">RESTAURAMOS HOGARES</p>
+                            <h1 style="font-size: 20px; filter: drop-shadow(2px 4px 6px black); margin-top:100px">
+                                <b>Tapicería y Restauración de Muebles</b></h1>
+                            <p>Restauramos muebles para el hogar, con la mejor calidad en los materiales y procesos para
+                                que pueda disfrutar de un producto por muchos más años, es la mejor inversión para esos
+                                muebles que aún tienen historias por contar.</p>
+                            <a class="banner_btn"
+                                href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZAR</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="home_right_box">
+                            <div class="home_item mensaje">
+                                <img src="{% static 'core/img/icons/sillon.png' %}" alt="restauracion total">
+                                <p class="oculta">Restauracion Total</p>
+                            </div>
+                            <div class="home_item mensaje">
+                                <img src="{% static 'core/img/icons/ebanisteria.png' %}" alt="ebanisteria">
+                                <p class="oculta">Ebanisteria</p>
+                            </div>
+                            <div class="home_item mensaje">
+                                <img src="{% static 'core/img/icons/brocha.png' %}" alt="pintura">
+                                <p class="oculta">Pintura</p>
+                            </div>
+                            <div class="home_item mensaje">
+                                <img src="{% static 'core/img/icons/tapiceria.png' %}" alt="tapiceria">
+                                <p class="oculta">Tapiceria</p>
+                            </div>
+                            <div class="home_item mensaje">
+                                <img src="{% static 'core/img/icons/reparacion.png' %}" alt="reparacion">
+                                <p class="oculta">Reparación</p>
+                            </div>
+                            <div class="home_item mensaje">
+                                <img src="{% static 'core/img/icons/sofa.png' %}" alt="fabricacion">
+                                <p class="oculta">Fabricación</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock banner %}
+    <!--================End Home Banner Area =================-->
+
+    <!--================Furniture Area =================-->
+    {% block content %}
+    <section class="furniture_area p_120">
+        <div class="container">
+            <div class="main_title">
+                <h2>Últimos Trabajos</h2>
+                <p>En Restauramos Hogares contamos con las herramientas y experiencia que hace que sus muebles tomen
+                    vida nueva, tapizando con telas de alta calidad y con el mayor cuidado en los detalles.</p>
+            </div>
+            <div class="furniture_inner row">
+                {% for trabajo in lista_trabajos %}
+                <div class="col-lg-4">
+                    <a href="{% url 'detalletrabajo' trabajo.slug  %}">
+                        <div class="furniture_item">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" style="height: 200px;">
+                                    {% if trabajo.imagen1 %}
+                                    <div class="carousel-item active ">
+                                        <img src="{{trabajo.imagen1.url}}" class="d-block w-100 imagen-carrusel-trabajo"
+                                            alt="...">
+                                    </div>
+                                    {% endif %}
+                                    {% if trabajo.imagen2 %}
+                                    <div class="carousel-item ">
+                                        <img src="{{trabajo.imagen2.url}}" class="d-block w-100 imagen-carrusel-trabajo"
+                                            alt="...">
+                                    </div>
+                                    {% endif %}
+                                    {% if trabajo.imagen3 %}
+                                    <div class="carousel-item">
+                                        <img src="{{trabajo.imagen3.url}}" class="d-block w-100 imagen-carrusel-trabajo"
+                                            alt="...">
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <h4>{{ trabajo.titulo }}</h4>
+                            <p style="color: #777777;">{{ trabajo.descripcion }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!--================End Furniture Area =================-->
+
+    <!--================Projects Area =================-->
+    <section class="projects_area">
+        <div class="row m0">
+            <div class="projects_item wd_18 contenedor">
+                <img src="{% static 'core/img/services-img/tapiceria.jpg' %}" alt="" class="imagen">
+                <div class="hover">
+                    <h4>Tapicería</h4>
+                    <p>Conservamos los detalles característicos de sus muebles o los adaptamos a nuevos espacios y
+                        necesidades.</p>
+                </div>
+            </div>
+            <div class="projects_item wd_18 contenedor">
+                <img src="{% static 'core/img/services-img/ebanisteria.jpg' %}" alt="" class="imagen">
+                <div class="hover">
+                    <h4>Ebanistería</h4>
+                    <p>Los muebles de madera crean ambientes acogedores y su elegancia combina con todos los tipos de
+                        decoración. La carpintería es un arte, del mismo modo que todos los trabajos, y la ebanistería
+                        es la máxima expresión del arte de la carpintería.</p>
+                </div>
+            </div>
+            <div class="projects_item wd_44 contenedor">
+                <img src="{% static 'core/img/services-img/restauracion.jpg' %}" alt="" class="imagen">
+                <div class="hover">
+                    <h4>Restauración</h4>
+                    <p>El servicio de retapizado es más que simplemente arreglar un mueble tapizado, es una restauración
+                        completa que incluye el cambio de tapiz, espumas y rellenos, sistema de suspensión ,reparación
+                        de zona dañada de la estructura (si así lo requiere).</p>
+                </div>
+            </div>
+            <div class="projects_item wd_18 contenedor">
+                <img src="{% static 'core/img/services-img/pintura.jpg' %}" alt="" class="imagen">
+                <div class="hover">
+                    <h4>Pintura</h4>
+                    <p>Con un simple "pintado y encerado" un mueble puede gozar de un cambio espectacular. Dependiendo
+                        del estado de la pieza, no hará falta más. Lo más importante es escoger la pintura y color
+                        adecuado en cada caso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Projects Area =================-->
+
+    <!--================Feature Area =================-->
+    <section class="feature_area p_120">
+        <div class="container">
+            <div class="main_title">
+                <h2>Cualidades Que Nos Hacen Únicos</h2>
+                <p>Somos un equipo dedicado a la fabricación de muebles tapizados, sofás, sillones, sofás a la medida
+                    para hogar y empresas.</p>
+            </div>
+            <div class="row feature_inner">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature_item">
+                        <h4><i class="lnr lnr-user"></i>Personal Experto</h4>
+                        <p>Nuestro equipo de tapiceros, ebanistas y costureros, están altamente capacitados en sus áreas</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature_item">
+                        <h4><i class="lnr lnr-license"></i>Servicio Garantizado</h4>
+                        <p>Todos nuestros trabajos, servicios y materiales se entregan con su correspondiente garantia.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature_item">
+                        <h4><i class="lnr lnr-phone"></i>Asesoría</h4>
+                        <p>Nuestro equipo de asesores están a su disposición para sacarlo de dudas y que puedas tomar la mejor decisión.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature_item">
+                        <h4><i class="lnr lnr-rocket"></i>Puntualidad </h4>
+                        <p>Recogemos y entregamos los muebles en la puerta de tu casa, con máxima puntualidad en la fecha acordadas.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature_item">
+                        <h4><i class="lnr lnr-diamond"></i>Resultados de Calidad</h4>
+                        <p>La calidad del resultado de nuestros trabajos es excepcional, te garantizamos una satisfacción total en tus muebles.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature_item">
+                        <h4><i class="lnr lnr-leaf"></i>Ecológicos</h4>
+                        <p>En REHO somos amigables con el medio ambiente, usamos materiales hechos de recursos renovables.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Feature Area =================-->
+
+    <!--================Impress Area =================-->
+    <section class="impress_area p_120">
+        <div class="container">
+            <div class="impress_inner text-center">
+                <h2>te entregamos los mejores<br />materiales y mano de obra de alta calidad</h2>
+                <a class="main_btn" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">Cotizar</a>
+            </div>
+        </div>
+    </section>
+    <!--================End Impress Area =================-->
+
+    <!--================Our Blog Area =================-->
+    <section class="our_blog_area p_120">
+        <div class="container">
+            <div class="main_title">
+                <h2>PUBLICACIONES RECIENTES DE NUESTRO BLOG</h2>
+            </div>
+            <div class="blog_inner row">
+                {% for post in lista_posts %}
+                <div class="col-lg-4">
+                    <div class="o_blog_item">
+                        <div class="blog_img contenedor">
+                            <img class="img-fluid imagen-trabajo" src="{{post.imagen.url}}" alt="">
+                        </div>
+
+                        <div class="blog_text">
+                            <div class="blog_cat">
+                                <a class="active" href="#">Nuevo</a>
+                                <a href="{% url 'detallepost' post.slug %}">Leer Mas</a>
+                            </div>
+                            <a href="{% url 'detallepost' post.slug %}">
+                                <h4>{{post.titulo}}</h4>
+                            </a>
+                            <p>{{post.descripcion}}
+                            </p>
+                            <a class="date" href="#">{{post.creacion}}</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!--================End Our Blog Area =================-->
+
+    {% endblock content %}
+    <!--================End Clients Logo Area =================-->
+
+    <!--================Footer Area =================-->
+    {% block footer %}
+    <footer class="footer_area p_40">
+        <div class="container">
+            <div class="row footer_inner">
+                <div class="col-lg-4 col-sm-6">
+                    <aside class="f_widget ab_widget">
+                        <div class="f_title">
+                            <img src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" class="mb-3" height="130"
+                                style="filter: drop-shadow(2px 1px 3px black);" alt="logo">
+                            <h3>Tapicería y Restauración de Muebles</h3>
+                        </div>
+                            Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> Todos los derechos reservados | Restauramos Hogares
+                        </p>
+                    </aside>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <aside class="f_widget news_widget">
+                        <div class="f_title">
+                            <h3>Suscribete</h3>
+                        </div>
+                        <p>Suscribete a nuestra lista de correos</p>
+                        <div id="mc_embed_signup">
+                            <form method="post" id="contactForm" class="subscribe_form relative">
+                                {% csrf_token %}
+                                <div class="input-group d-flex flex-row">
+                                    {{formulario.email}}
+                                    <button type="submit" class="btn sub-btn"><span
+                                            class="lnr lnr-arrow-right"></span></button>
+                                </div>
+                                <div class="mt-10 info"></div>
+                            </form>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-lg-4">
+                    <aside class="f_widget social_widget">
+                        <div class="f_title">
+                            <h3>Siguenos</h3>
+                        </div>
+                        <p>Nuestras redes sociales</p>
+                        <ul class="list" style="color: white;">
+                            {% if LINK_FACEBOOK %}
+                            <li><a href="{{LINK_FACEBOOK}}"> <i class="fab fa-facebook-square fa-5x"></i></a></li>
+
+                            {% endif %}
+                            {% if LINK_TWITTER %}
+                            <li><a href="{{LINK_TWITTER}}"> <i class="fab fa-twitter fa-5x"></i></a></li>
+
+                            {% endif %}
+                            {% if LINK_INSTAGRAM %}
+                            <li><a href="{{LINK_INSTAGRAM}}"><i class="fab fa-instagram fa-5x"></i></a></li>
+
+                            {% endif %}
+                            {% if LINK_YOUTUBE %}
+                            <li><a href="{{LINK_YOUTUBE}}"> <i class="fab fa-youtube fa-5x"></i> </i></a></li>
+
+                            {% endif %}
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock footer %}
+    <!--================End Footer Area =================-->
+
+    <div class="modal fade" id="popup"></div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'core/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'core/js/stellar.js' %}"></script>
+    <script src="{% static 'core/vendors/lightbox/simpleLightbox.min.js' %}"></script>
+    <script src="{% static 'core/vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'core/vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'core/vendors/isotope/isotope-min.js' %}"></script>
+    <script src="{% static 'core/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'core/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'core/vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'core/vendors/counter-up/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'core/js/mail-script.js' %}"></script>
+    <script src="{% static 'core/js/theme.js' %}"></script>
+    {% block control_modal %}
+    <script>
+        function abrir_modal(url) {
+            $("#popup").load(url, function () {
+                $(this).modal({
+                    backdrop: 'static',
+                    keyboard: false
+                })
+                $(this).modal('show');
+            });
+            return false;
+        }
+
+        function cerrar_modal() {
+            $('#popup').on('hidden.bs.modal', function () {
+                $(this).find('form').trigger('reset');
+            })
+            $('#popup').modal('hide');
+            return false;
+        }
+
+        function mensaje(msg, tags) {
+            if (tags == 'success') {
+                swal({
+                    text: msg,
+                    icon: tags,
+                    buttons: false,
+                    timer: 2000,
+                });
+            } else {
+                swal({
+                    text: msg,
+                    icon: tags,
+                    buttons: false,
+                    timer: 5000,
+                });
+            }
+        }
+
+        {% if messages %}
+        {% for message in messages %}
+        mensaje("{{ message }}", "{{ message.tags }}");
+        {% endfor %}
+        {% endif %}
+    </script>
+    {% endblock control_modal %}
+
+    {% block js %}{% endblock js %}
+
+</body>
+
+</html>
