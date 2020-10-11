@@ -24,7 +24,6 @@ class Migration(migrations.Migration):
                 ('contenido', ckeditor_uploader.fields.RichTextUploadingField(verbose_name='Contenido')),
                 ('imagen1', models.ImageField(upload_to=materiales.models.custom_upload_to1, verbose_name='Imagen 1')),
                 ('imagen2', models.ImageField(blank=True, null=True, upload_to=materiales.models.custom_upload_to2, verbose_name='Imagen 2')),
-                ('imagen3', models.ImageField(blank=True, null=True, upload_to=materiales.models.custom_upload_to3, verbose_name='Imagen 3')),
                 ('categoria', models.PositiveSmallIntegerField(choices=[(1, 'Telas'), (2, 'Cueros'), (3, 'Maderas')], default=1, verbose_name='Categoria')),
                 ('index', models.BooleanField(default=True, verbose_name='Mostrar en el inicio')),
                 ('estado', models.BooleanField(default=True, verbose_name='Publicado/Oculto')),

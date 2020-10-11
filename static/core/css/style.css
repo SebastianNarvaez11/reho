@@ -43,6 +43,33 @@ Table of Content:
 
 
 /*----------------------------------------------------*/
+.carousel:hover {
+    box-shadow: 0px 0px 17px 0px black;
+    border-radius: 15px;
+    transition: all 300ms linear 0s;
+}
+
+
+
+/* CSS BEFORE & AFTER SLIDE Nº2 */
+#comparison{width:100%;overflow:hidden;position:relative}
+figure{position:absolute;background-size:cover;font-size:0;margin:0}
+#divisor{background-size:cover;position:absolute;width:50%;box-shadow:0 5px 10px -2px rgba(0,0,0,0.3);bottom:0;height:100%}
+#divisor::before,#divisor::after{content:'';position:absolute;right:-2px;width:4px;height:calc(50% - 23px);background:#fff;z-index:3}
+#divisor::before{top:0}
+#divisor::after{bottom:0}
+#handle{position:absolute;height:50px;width:50px;top:50%;left:50%;-webkit-transform:translateY(-50%) translateX(-50%);transform:translateY(-50%) translateX(-50%);z-index:1;border-radius:100%;background-color:#6C7A89}
+#handle::before,#handle::after{content:'';width:0;height:0;border:6px inset transparent;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+#handle::before{border-right:6px solid #fff;left:50%;margin-left:-16px}
+#handle::after{border-left:6px solid #fff;right:50%;margin-right:-16px}
+input[type=range]{-webkit-appearance:none;-moz-appearance:none;position:absolute;top:50%;left:-25px;-webkit-transform:translateY(-50%);transform:translateY(-50%);background-color:transparent;width:calc(100% + 50px);z-index:2;margin:0;padding:0;height:50px;text-indent:0.01px;text-overflow:'';}
+input[type=range]:focus,input[type=range]:active{border:none;outline:none}
+input[type=range]::-moz-focus-outer{border:0;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;border:none;height:50px;width:50px;border-radius:50%;background:transparent;border:4px solid #fff;box-shadow:0 0 8px 1px rgba(0,0,0,0.3)}
+input[type=range]::-moz-range-track{-moz-appearance:none;height:15px;width:100%;background-color:transparent;position:relative;outline:none;text-indent:0.01px;text-overflow:'';}
+input[type=range]::-moz-range-thumb,input[type=range]:focus::-moz-range-thumb{box-shadow:none;border:none;height:0;width:0;border-radius:0;background:transparent;cursor:pointer;text-indent:0.01px;text-overflow:'';}
+input[type=range]::-ms-thumb{box-shadow:none;border:none;height:0;width:0;border-radius:0;background:transparent;cursor:pointer}
+
 .imagen-blog-tips {
     object-fit: cover;
     height: 260px;

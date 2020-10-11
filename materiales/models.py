@@ -22,16 +22,6 @@ def custom_upload_to2(instance, filename):
         old_instance.imagen2.delete()
         return 'materiales/' + filename
 
-def custom_upload_to3(instance, filename):
-    #primero evalua si existen instancias anteriores de el objeto a crear
-    if not Material.objects.filter(pk=instance.pk):
-        return 'materiales/' + filename
-    else:
-        old_instance =  Material.objects.get(pk=instance.pk)
-        old_instance.imagen3.delete()
-        return 'materiales/' + filename
-
-
 
 class Material(models.Model):
     CATEGORIA_TYPE_CHOICES = (
@@ -45,7 +35,6 @@ class Material(models.Model):
     contenido = RichTextUploadingField('Contenido')
     imagen1 = models.ImageField('Imagen 1', upload_to=custom_upload_to1)
     imagen2 = models.ImageField('Imagen 2', upload_to=custom_upload_to2, null=True, blank=True)
-    imagen3 = models.ImageField('Imagen 3', upload_to=custom_upload_to3, null=True, blank=True)
     categoria = models.PositiveSmallIntegerField('Categoria', choices=CATEGORIA_TYPE_CHOICES, default=1)
     index = models.BooleanField('Mostrar en el inicio', default=True)
     estado = models.BooleanField('Publicado/Oculto', default=True)
@@ -59,7 +48,7 @@ class Material(models.Model):
     class Meta:
         verbose_name = 'Material'
         verbose_name_plural = 'Materiales'
-        ordering = ['creacion']
+        ordering = ['-creacion']
 
     def __str__(self):
         return self.titulo

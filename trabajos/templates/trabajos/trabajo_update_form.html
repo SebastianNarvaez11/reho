@@ -40,18 +40,13 @@
                                 <input type="file" name="imagen1" accept="trabajos/*" id="id_imagen1"
                                     value="{% if form.imagen1.value %}{{form.imagen1.url.value}}{%endif%}">
 
-                                <small class="text-danger"> {{ form.imagen.errors }}</small>
+                                <small class="text-danger"> {{ form.imagen1.errors }}</small>
                             </div>
                             <div class="form-group col-xl-4 col-lg-4">
                                 <input type="file" name="imagen2" accept="trabajos/*" id="id_imagen2"
                                     value="{% if form.imagen2.value %}{{form.imagen2.url.value}}{%endif%}">
 
-                                <small class="text-danger"> {{ form.imagen.errors }}</small>
-                            </div>
-                            <div class="form-group col-xl-4 col-lg-4">
-                                <input type="file" name="imagen3" accept="trabajos/*" id="id_imagen3"
-                                    value="{% if form.imagen2.value %}{{form.imagen2.url.value}}{%endif%}">
-                                <small class="text-danger"> {{ form.imagen.errors }}</small>
+                                <small class="text-danger"> {{ form.imagen2.errors }}</small>
                             </div>
                         </div>
                         <div class="row ">
@@ -69,13 +64,6 @@
                                         {% else %}src="{% static 'dash/img/not-photo.png' %}" {% endif %} />
                                 </div>
                             </div>
-                            <div class="form-group col-xl-4 col-lg-4">
-                                <div><img id="blah3"
-                                        class="img-thumbnail foto_service border border-warning border-success"
-                                        style="height: 150px;" {% if trabajo.imagen3 %} src=" {{trabajo.imagen3.url}}"
-                                        {% else %}src="{% static 'dash/img/not-photo.png' %}" {% endif %} />
-                                </div>
-                            </div>
                         </div>
                         <div class="row ">
                             <div class="custom-control custom-checkbox small col-xl-4 col-lg-4">
@@ -88,8 +76,8 @@
                                     {% if trabajo.estado %} checked {% endif %}>
                                 <label class="custom-control-label" for="id_estado">Publicado/Oculto:</label>
                             </div>
-                            <div class="custom-control custom-checkbox small col-xl-4 col-lg-4">
-                                <label class="custom-control-label" for="id_categoria">Categoria:</label>
+                            <div class="form-group col-xl-4 col-lg-4">
+                                <label for="id_categoria">Categoria:</label>
                                 <select class="form-control" required name="categoria" id="id_categoria" >
                                     <option value="0" disabled>Seleccione una categoria..</option>
                                     <option value={{trabajo.categoria}}>{{trabajo.get_categoria_display}}</option>
@@ -148,19 +136,5 @@
         readImage2(this);
     });
 
-    function readImage3(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#blah3').attr('src', e.target.result); // Renderizamos la imagen
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $("#id_imagen3").change(function () {
-        // Código a ejecutar cuando se detecta un cambio de archivO
-        readImage3(this);
-    });
 </script>
 {% endblock js %}

@@ -112,6 +112,5 @@ class TrabajoDeleteView(SinPermisos, DeleteView):
         Trabajo = self.get_object()
         Trabajo.imagen1.delete()
         Trabajo.imagen2.delete()
-        Trabajo.imagen3.delete()
         messages.success(self.request, self.success_message)
         return super(TrabajoDeleteView, self).delete(request, *args, **kwargs)

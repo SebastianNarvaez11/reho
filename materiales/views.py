@@ -112,6 +112,5 @@ class MaterialDeleteView(SinPermisos, DeleteView):
         Material = self.get_object()
         Material.imagen1.delete()
         Material.imagen2.delete()
-        Material.imagen3.delete()
         messages.success(self.request, self.success_message)
         return super(MaterialDeleteView, self).delete(request, *args, **kwargs)

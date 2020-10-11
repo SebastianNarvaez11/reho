@@ -61,10 +61,25 @@
 			<div class="col-lg-4">
 				<a href="{% url 'detalletrabajo' trabajo.slug  %}">
 					<div class="furniture_item">
-						<div class="contenedor">
-							<img class="img-fluid imagen-trabajo" src="{{ trabajo.imagen1.url }}" alt="">
+						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner" style="height: 200px;">
+								{% if trabajo.imagen1 %}
+								<div class="carousel-item active ">
+									<img src="{{trabajo.imagen1.url}}" class="d-block w-100 imagen-carrusel-trabajo"
+										alt="...">
+								</div>
+								{% endif %}
+								{% if trabajo.imagen2 %}
+								<div class="carousel-item ">
+									<img src="{{trabajo.imagen2.url}}" class="d-block w-100 imagen-carrusel-trabajo"
+										alt="...">
+								</div>
+								{% endif %}
+							</div>
 						</div>
 						<h4>{{ trabajo.titulo }}</h4>
+						<p style="color: #777777;">{{ trabajo.descripcion }}
+						</p>
 					</div>
 				</a>
 			</div>
@@ -91,10 +106,25 @@
 			<div class="col-lg-4">
 				<a href="{% url 'detalletrabajo' trabajo.slug  %}">
 					<div class="furniture_item">
-						<div class="contenedor">
-							<img class="img-fluid imagen-trabajo" src="{{ trabajo.imagen1.url }}" alt="">
+						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner" style="height: 200px;">
+								{% if trabajo.imagen1 %}
+								<div class="carousel-item active ">
+									<img src="{{trabajo.imagen1.url}}" class="d-block w-100 imagen-carrusel-trabajo"
+										alt="...">
+								</div>
+								{% endif %}
+								{% if trabajo.imagen2 %}
+								<div class="carousel-item ">
+									<img src="{{trabajo.imagen2.url}}" class="d-block w-100 imagen-carrusel-trabajo"
+										alt="...">
+								</div>
+								{% endif %}
+							</div>
 						</div>
 						<h4>{{ trabajo.titulo }}</h4>
+						<p style="color: #777777;">{{ trabajo.descripcion }}
+						</p>
 					</div>
 				</a>
 			</div>
@@ -122,10 +152,25 @@
 			<div class="col-lg-4">
 				<a href="{% url 'detalletrabajo' trabajo.slug  %}">
 					<div class="furniture_item">
-						<div class="contenedor">
-							<img class="img-fluid imagen-trabajo" src="{{ trabajo.imagen1.url }}" alt="">
+						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner" style="height: 200px;">
+								{% if trabajo.imagen1 %}
+								<div class="carousel-item active ">
+									<img src="{{trabajo.imagen1.url}}" class="d-block w-100 imagen-carrusel-trabajo"
+										alt="...">
+								</div>
+								{% endif %}
+								{% if trabajo.imagen2 %}
+								<div class="carousel-item ">
+									<img src="{{trabajo.imagen2.url}}" class="d-block w-100 imagen-carrusel-trabajo"
+										alt="...">
+								</div>
+								{% endif %}
+							</div>
 						</div>
 						<h4>{{ trabajo.titulo }}</h4>
+						<p style="color: #777777;">{{ trabajo.descripcion }}
+						</p>
 					</div>
 				</a>
 			</div>
