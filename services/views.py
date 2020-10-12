@@ -109,6 +109,5 @@ class ServiceDeleteView(SinPermisos, DeleteView):
         service = self.get_object()
         service.imagen1.delete()
         service.imagen2.delete()
-        service.imagen3.delete()
         messages.success(self.request, self.success_message)
         return super(ServiceDeleteView, self).delete(request, *args, **kwargs)

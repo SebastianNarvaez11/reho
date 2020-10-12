@@ -7,4 +7,4 @@ class ServiceForm(ModelForm):
 
     class Meta:
         model = Service
-        fields = ['titulo', 'descripcion', 'contenido', 'imagen1', 'imagen2', 'imagen3', 'index', 'estado']
+        fields = ['titulo', 'descripcion', 'contenido', 'imagen1', 'imagen2', 'index', 'estado']
