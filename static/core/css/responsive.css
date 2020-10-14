@@ -254,9 +254,7 @@
 	}
 	/* End End Footer Area css
 	============================================================================================ */
-	.home_banner_area .home_right_box {
-		display: none;
-	}
+	
 	.home_banner_area .banner_inner {
 		min-height: 100%;
 	}
@@ -301,7 +299,7 @@
 		margin-top: 0px;
 	}
 	.home_banner_area .banner_inner .banner_content img{
-		display: none;
+		width: 100%;
 	}
 	.home_banner_area .banner_inner .banner_content h5 {
 		margin-top: 0px;
