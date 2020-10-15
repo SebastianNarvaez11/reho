@@ -16,7 +16,8 @@ from django.urls import reverse
 from django.core.mail import EmailMessage
 
 # Create your views here.
-
+def sitemap(request):
+    return render(request, 'core/sitemap.xml')
 
 def index(request):
     if not Business.objects.all():
