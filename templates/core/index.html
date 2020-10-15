@@ -90,28 +90,40 @@
                     <div class="col-lg-4">
                         <div class="home_right_box">
                             <div class="home_item mensaje">
-                                <img src="{% static 'core/img/icons/sillon.png' %}" alt="restauracion total">
-                                <p class="oculta">Restauracion Total</p>
+                                <a href="{% url 'services' %}">
+                                    <img src="{% static 'core/img/icons/sillon.png' %}" alt="restauracion total">
+                                    <p class="oculta">Restauracion Total</p>
+                                </a>
                             </div>
                             <div class="home_item mensaje">
-                                <img src="{% static 'core/img/icons/ebanisteria.png' %}" alt="ebanisteria">
-                                <p class="oculta">Ebanisteria</p>
+                                <a href="{% url 'services' %}">
+                                    <img src="{% static 'core/img/icons/ebanisteria.png' %}" alt="ebanisteria">
+                                    <p class="oculta">Ebanisteria</p>
+                                </a>
                             </div>
                             <div class="home_item mensaje">
-                                <img src="{% static 'core/img/icons/brocha.png' %}" alt="pintura">
-                                <p class="oculta">Pintura</p>
+                                <a href="{% url 'services' %}">
+                                    <img src="{% static 'core/img/icons/brocha.png' %}" alt="pintura">
+                                    <p class="oculta">Pintura</p>
+                                </a>
                             </div>
                             <div class="home_item mensaje">
-                                <img src="{% static 'core/img/icons/tapiceria.png' %}" alt="tapiceria">
-                                <p class="oculta">Tapiceria</p>
+                                <a href="{% url 'services' %}">
+                                    <img src="{% static 'core/img/icons/tapiceria.png' %}" alt="tapiceria">
+                                    <p class="oculta">Tapiceria</p>
+                                </a>
                             </div>
                             <div class="home_item mensaje">
-                                <img src="{% static 'core/img/icons/reparacion.png' %}" alt="reparacion">
-                                <p class="oculta">Reparación</p>
+                                <a href="{% url 'services' %}">
+                                    <img src="{% static 'core/img/icons/reparacion.png' %}" alt="reparacion">
+                                    <p class="oculta">Reparación</p>
+                                </a>
                             </div>
                             <div class="home_item mensaje">
-                                <img src="{% static 'core/img/icons/sofa.png' %}" alt="fabricacion">
-                                <p class="oculta">Fabricación</p>
+                                <a href="{% url 'services' %}">
+                                    <img src="{% static 'core/img/icons/sofa.png' %}" alt="fabricacion">
+                                    <p class="oculta">Fabricación</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -218,7 +230,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
                         <h4><i class="lnr lnr-user"></i>Personal Experto</h4>
-                        <p>Nuestro equipo de tapiceros, ebanistas y costureros, están altamente capacitados en sus áreas</p>
+                        <p>Nuestro equipo de tapiceros, ebanistas y costureros, están altamente capacitados en sus áreas
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -231,28 +244,32 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
                         <h4><i class="lnr lnr-phone"></i>Asesoría</h4>
-                        <p>Nuestro equipo de asesores están a su disposición para sacarlo de dudas y que puedas tomar la mejor decisión.
+                        <p>Nuestro equipo de asesores están a su disposición para sacarlo de dudas y que puedas tomar la
+                            mejor decisión.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
                         <h4><i class="lnr lnr-rocket"></i>Puntualidad </h4>
-                        <p>Recogemos y entregamos los muebles en la puerta de tu casa, con máxima puntualidad en la fecha acordadas.
+                        <p>Recogemos y entregamos los muebles en la puerta de tu casa, con máxima puntualidad en la
+                            fecha acordadas.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
                         <h4><i class="lnr lnr-diamond"></i>Resultados de Calidad</h4>
-                        <p>La calidad del resultado de nuestros trabajos es excepcional, te garantizamos una satisfacción total en tus muebles.
+                        <p>La calidad del resultado de nuestros trabajos es excepcional, te garantizamos una
+                            satisfacción total en tus muebles.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
                         <h4><i class="lnr lnr-leaf"></i>Ecológicos</h4>
-                        <p>En REHO somos amigables con el medio ambiente, usamos materiales hechos de recursos renovables.
+                        <p>En REHO somos amigables con el medio ambiente, usamos materiales hechos de recursos
+                            renovables.
                         </p>
                     </div>
                 </div>
@@ -266,7 +283,8 @@
         <div class="container">
             <div class="impress_inner text-center">
                 <h2>te entregamos los mejores<br />materiales y mano de obra de alta calidad</h2>
-                <a class="main_btn" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">Cotizar</a>
+                <a class="main_btn"
+                    href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">Cotizar</a>
             </div>
         </div>
     </section>
@@ -288,7 +306,6 @@
 
                         <div class="blog_text">
                             <div class="blog_cat">
-                                <a class="active" href="#">Nuevo</a>
                                 <a href="{% url 'detallepost' post.slug %}">Leer Mas</a>
                             </div>
                             <a href="{% url 'detallepost' post.slug %}">
@@ -321,10 +338,10 @@
                                 style="filter: drop-shadow(2px 1px 3px black);" alt="logo">
                             <h3>Tapicería y Restauración de Muebles</h3>
                         </div>
-                            Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script> Todos los derechos reservados | Restauramos Hogares
+                        Copyright &copy;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> Todos los derechos reservados | Restauramos Hogares
                         </p>
                     </aside>
                 </div>
@@ -401,7 +418,7 @@
     <script src="{% static 'core/js/theme.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript">
     </script>
-    
+
     {% block control_modal %}
     <script>
         function abrir_modal(url) {

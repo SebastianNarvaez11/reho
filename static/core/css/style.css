@@ -1063,7 +1063,6 @@ button:focus {
 .categories_post {
     position: relative;
     text-align: center;
-    cursor: pointer;
 }
 
 .categories_post img {
