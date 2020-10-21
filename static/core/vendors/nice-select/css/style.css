@@ -9,6 +9,7 @@
   display: block;
   float: left;
   font-family: inherit;
+  font-display: swap;
   font-size: 14px;
   font-weight: normal;
   height: 42px;
@@ -155,6 +156,7 @@ pre[class*="language-"] {
   word-wrap: normal;
   direction: ltr;
   font-family: Inconsolata, monospace;
+  font-display: swap;
   font-size: 13px;
   letter-spacing: 0; }
 
