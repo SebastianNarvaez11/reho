@@ -76,21 +76,21 @@
 
       {% if perms.core.view_business %}
       <div class="sidebar-heading">
-        Business
+        Empresa
       </div>
 
       <li class="nav-item {% if request.path|slice:":19" == '/dashboard/business/' %}active{% endif %}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBusiness"
           aria-expanded="true" aria-controls="collapseBusiness">
           <i class="fas fa-school"></i>
-          <span>Business</span>
+          <span>Empresa</span>
         </a>
         <div id="collapseBusiness" class="collapse 
           {% if request.path|slice:":19" == '/dashboard/business/' %}show
           {% elif request.path|slice:":17" == '/dashboard/redes/' %}show
           {% endif %}" aria-labelledby="headingBusiness" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Informacion del Business:</h6>
+            <h6 class="collapse-header">Informacion de la empresa:</h6>
             <a class="collapse-item {% if request.path|slice:":26" == '/dashboard/business/update/' %}active{% endif %}"
               href="{% url 'business_urldash:update' pk=1 %}"><i class="fas fa-server"></i> - Datos</a>
             
