@@ -159,7 +159,7 @@
           {% if request.path|slice:":16" == '/dashboard/blog/' %}show {% endif %}" aria-labelledby="headingBlog"
           data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            {% if perms.pdi.create_post%}
+            {% if perms.blog.create_post%}
             <a class="collapse-item {% if request.path|slice:":16" == '/dashboard/blog/' %}active{% endif %}"
               href="{% url 'blog_dash:list' %}"><i class="far fa-bookmark"></i> -
               Post</a>
