@@ -1,0 +1,113 @@
+{% extends 'core/about.html' %}
+{% load static %}
+{% block title %}Tapicería y Restauración de Muebles | Restauramos Hogares | Productos 🥇⭐{% endblock title %}
+
+{% block title_banner %}Tienda{% endblock title_banner %}
+
+<!--================About Area =================-->
+{% block content %}
+<section class="blog_categorie_area">
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="col-lg-4">
+				<div class="categories_post contenedor">
+					<a href="#nuevos">
+						<img src="{% static 'core/img/blog/cat-post/cat-post-3.jpg'%}" class="imagen-blog-tips"
+							alt="post">
+						<div class="categories_details">
+							<div class="categories_text">
+								<h5>Nuevos</h5>
+								<div class="border_line"></div>
+								<p>Los mejores tips para tus muebles</p>
+							</div>
+						</div>
+					</a>
+
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<a href="#restaurados">
+					<div class="categories_post contenedor">
+						<img src="{% static 'core/img/blog/cat-post/cat-post-2.jpg'%}" class="imagen-blog-tips"
+							alt="post">
+						<div class="categories_details">
+							<div class="categories_text">
+								<h5>Restaurados</h5>
+								<div class="border_line"></div>
+								<p>Consejos de utilidad</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="blog_area mt-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="main_title">
+					<h2 id="nuevos">Nuevos</h2>
+				</div>
+				<div class="row">
+					{% for producto in nuevos %}
+					<div class="col-lg-3 col-md-4 mb-3">
+						<div class="card ">
+							<a href="#"><img class="card-img-top" src="{{producto.imagen1.url}}" alt=""></a>
+							<div class="card-body">
+								<h4 class="card-title">
+									<a href="#">{{producto.titulo}}</a>
+								</h4>
+								<h5>$ {{producto.valor}} COP</h5>
+								<a href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;comprar&nbsp;el&nbsp;mueble&nbsp;'{{producto.titulo}}'&nbsp;que&nbsp;tienen&nbsp;en&nbsp;la&nbsp;tienda"
+									class="btn btn-success btn-block text-white">Comprar <i
+										class="fab fa-whatsapp"></i></a>
+							</div>
+							<div class="card-footer">
+								<i class="fa fa-star" style="color : #facb48;"></i>
+								<i class="fa fa-star" style="color : #facb48;"></i>
+								<i class="fa fa-star" style="color : #facb48;"></i>
+								<i class="fa fa-star" style="color : #facb48;"></i>
+								<i class="fa fa-star" style="color : #facb48;"></i>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<div class="main_title">
+					<h2 id="restaurados">Restaurados</h2>
+				</div>
+				<div class="row">
+					{% for producto in restaurados %}
+					<div class="col-lg-3 col-md-4 mb-3">
+						<div class="card ">
+							<a href="#"><img class="card-img-top" src="{{producto.imagen1.url}}" alt=""></a>
+							<div class="card-body">
+								<h4 class="card-title">
+									<a href="#">{{producto.titulo}}</a>
+								</h4>
+								<h5>$ {{producto.valor}} COP</h5>
+								<a href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;comprar&nbsp;el&nbsp;mueble&nbsp;'{{producto.titulo}}'&nbsp;que&nbsp;tienen&nbsp;en&nbsp;la&nbsp;tienda"
+									class="btn btn-success btn-block text-white">Comprar <i
+										class="fab fa-whatsapp"></i></a>
+							</div>
+							<div class="card-footer">
+								<i class="fa fa-star" style="color : #facb48;"></i>
+								<i class="fa fa-star" style="color : #facb48;"></i>
+								<i class="fa fa-star" style="color : #facb48;"></i>
+								<i class="fa fa-star" style="color : #facb48;"></i>
+								<i class="fa fa-star" style="color : #facb48;"></i>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+			{%block sidebar%}
+
+			{%endblock sidebar%}
+		</div>
+	</div>
+</section>
+{% endblock content %}

@@ -62,9 +62,6 @@
       <hr class="sidebar-divider">
 
       {% if perms.auth.add_user %}
-      <div class="sidebar-heading">
-        Administrador
-      </div>
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item {% if request.path|slice:":20" == '/dashboard/usuarios/' %}active{% endif %}">
         <a class="nav-link" href="{% url 'user_urldash:list' %}">
@@ -75,9 +72,6 @@
       {% endif %}
 
       {% if perms.core.view_business %}
-      <div class="sidebar-heading">
-        Empresa
-      </div>
 
       <li class="nav-item {% if request.path|slice:":19" == '/dashboard/business/' %}active{% endif %}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBusiness"
@@ -107,9 +101,6 @@
       {% endif %}
       <!-- Heading -->
       {% if perms.services.view_service %}
-      <div class="sidebar-heading">
-        Servicios
-      </div>
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item {% if request.path|slice:":20" == '/dashboard/services/' %}active{% endif %}">
         <a class="nav-link" href="{% url 'services_dash:list' %}">
@@ -120,22 +111,16 @@
       {% endif %}
 
       {% if perms.trabajos.view_trabajo %}
-      <div class="sidebar-heading">
-        Trabajos
-      </div>
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item {% if request.path|slice:":20" == '/dashboard/trabajos/' %}active{% endif %}">
         <a class="nav-link" href="{% url 'trabajos_dash:list' %}">
-          <i class="fas fa-briefcase"></i>
+          <i class="fas fa-couch"></i>
           <span>Trabajos</span></a>
       </li>
       <hr class="sidebar-divider ">
       {% endif %}
 
       {% if perms.materiales.view_material %}
-      <div class="sidebar-heading">
-        Materiales
-      </div>
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item {% if request.path|slice:":22" == '/dashboard/materiales/' %}active{% endif %}">
         <a class="nav-link" href="{% url 'materiales_dash:list' %}">
@@ -145,9 +130,16 @@
       <hr class="sidebar-divider ">
       {% endif %}
 
-      <div class="sidebar-heading">
-        Blog
-      </div>
+
+      {% if perms.productos.view_producto %}
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item {% if request.path|slice:":21" == '/dashboard/productos/' %}active{% endif %}">
+        <a class="nav-link" href="{% url 'productos_dash:list' %}">
+          <i class="fas fa-briefcase"></i>
+          <span>Productos</span></a>
+      </li>
+      <hr class="sidebar-divider ">
+      {% endif %}
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlog" aria-expanded="true"

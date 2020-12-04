@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
-    <title>{% block title %}Tapicería y Restauración de Muebles | REHO 🥇⭐{% endblock title %}</title>
+    <title>{% block title %}Tapicería y Restauración de Muebles | Restauramos Hogares 🥇⭐{% endblock title %}</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'core/vendors/linericon/style.css' %}">
@@ -78,6 +78,7 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Servicios</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'trabajos' %}">Trabajos</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'materiales' %}">Materiales</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'productos' %}">Tienda</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contacto</a></li>
                         </ul>

@@ -1,0 +1,201 @@
+{% extends 'dash/base.html' %}
+{% load static %}
+{% block titulo %} Restauramos Hogares | Productos {% endblock titulo %}
+{% block contenido %}
+<div class="container">
+    <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="font-weight-bold text-uppercase mb-1">
+                        Actualizar Producto
+                    </div>
+                    <div class="dropdown-divider"></div>
+
+                    <form method="POST" class="user" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row ">
+                            <div class="form-group col-xl-4 col-lg-4">
+                                <input type="text" class="form-control form-control-user" required name="titulo"
+                                    id="id_titulo" placeholder="Titulo" value="{{producto.titulo}}" maxlength="20"
+                                    minlength="4">
+                                <small class="text-danger"> {{ form.titulo.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-4 col-lg-4">
+                                <input type="text" class="form-control form-control-user" required name="descripcion"
+                                    id="id_descripcion" placeholder="Descripcion" value="{{producto.descripcion}}"
+                                    maxlength="150">
+                                <small class=" text-danger"> {{ form.descripcion.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-4 col-lg-4">
+                                <input type="number" class="form-control form-control-user" required name="valor"
+                                    id="id_valor" placeholder="Precio" value="{{producto.valor}}">
+                                <small class=" text-danger"> {{ form.valor.errors }}</small>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="form-group col-xl-12 col-lg-12">
+                                {{form.contenido}}
+                            </div>
+                            <small class=" text-danger"> {{ form.contenido.errors }}</small>
+                        </div>
+                        <p>Carga de Imagenes</p>
+                        <div class="row ">
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <input type="file" name="imagen1" accept="productoes/*" id="id_imagen1"
+                                    value="{% if form.imagen1.value %}{{form.imagen1.url.value}}{%endif%}">
+
+                                <small class="text-danger"> {{ form.imagen1.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <input type="file" name="imagen2" accept="productoes/*" id="id_imagen2"
+                                    value="{% if form.imagen2.value %}{{form.imagen2.url.value}}{%endif%}">
+
+                                <small class="text-danger"> {{ form.imagen2.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <input type="file" name="imagen3" accept="trabajos/*"  id="id_imagen3"
+                                    value="{% if form.imagen3.value %}{{form.imagen3.url.value}}{%endif%}">
+
+                                <small class="text-danger"> {{ form.imagen3.errors }}</small>
+                            </div>
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <input type="file" name="imagen4" accept="trabajos/*"  id="id_imagen4"
+                                    value="{% if form.imagen4.value %}{{form.imagen4.url.value}}{%endif%}">
+
+                                <small class="text-danger"> {{ form.imagen4.errors }}</small>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <div><img id="blah1"
+                                        class="img-thumbnail foto_service border border-warning border-success"
+                                        style="height: 150px;" {% if producto.imagen1 %} src=" {{producto.imagen1.url}}"
+                                        {% else %}src="{% static 'dash/img/not-photo.png' %}" {% endif %} />
+                                </div>
+                            </div>
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <div><img id="blah2"
+                                        class="img-thumbnail foto_service border border-warning border-success"
+                                        style="height: 150px;" {% if producto.imagen2 %} src=" {{producto.imagen2.url}}"
+                                        {% else %}src="{% static 'dash/img/not-photo.png' %}" {% endif %} />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <div><img id="blah3"
+                                        class="img-thumbnail foto_service border border-warning border-success"
+                                        style="height: 150px;" {% if producto.imagen3 %} src=" {{producto.imagen3.url}}"
+                                        {% else %}src="{% static 'dash/img/not-photo.png' %}" {% endif %} />
+                                </div>
+                            </div>
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <div><img id="blah4"
+                                        class="img-thumbnail foto_service border border-warning border-success"
+                                        style="height: 150px;" {% if producto.imagen4 %} src=" {{producto.imagen4.url}}"
+                                        {% else %}src="{% static 'dash/img/not-photo.png' %}" {% endif %} />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="custom-control custom-checkbox small col-xl-4 col-lg-4">
+                                <input type="checkbox" class="custom-control-input" name="index" id="id_index"
+                                    {% if producto.index %} checked {% endif %}>
+                                <label class="custom-control-label" for="id_index">¿ Mostrar en el inicio ?</label>
+                            </div>
+                            <div class="custom-control custom-checkbox small col-xl-4 col-lg-4">
+                                <input type="checkbox" class="custom-control-input" name="estado" id="id_estado"
+                                    {% if producto.estado %} checked {% endif %}>
+                                <label class="custom-control-label" for="id_estado">Publicado/Oculto:</label>
+                            </div>
+                            <div class="form-group col-xl-3 col-lg-3">
+                                <label for="id_categoria">Categoria:</label>
+                                <select class="form-control" required name="categoria" id="id_categoria" >
+                                    <option value="0" disabled>Seleccione una categoria..</option>
+                                    <option value={{producto.categoria}}>{{producto.get_categoria_display}}</option>
+                                    <option value="1">Nuevo</option>
+                                    <option value="2">Restaurado</option>
+                                </select>
+                                <small class="text-danger"> {{ form.categoria.errors }}</small>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="submit" class="btn btn-success">Actualizar</button>
+                                <a href="{% url 'productos_dash:list' %}" class="btn btn-danger">Cancelar</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}
+
+{% block js %}
+<script>
+    function readImage1(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah1').attr('src', e.target.result); // Renderizamos la imagen
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#id_imagen1").change(function () {
+        // Código a ejecutar cuando se detecta un cambio de archivO
+        readImage1(this);
+    });
+
+    function readImage2(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah2').attr('src', e.target.result); // Renderizamos la imagen
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#id_imagen2").change(function () {
+        // Código a ejecutar cuando se detecta un cambio de archivO
+        readImage2(this);
+    });
+
+    function readImage3(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah3').attr('src', e.target.result); // Renderizamos la imagen
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#id_imagen3").change(function () {
+        // Código a ejecutar cuando se detecta un cambio de archivO
+        readImage3(this);
+    });
+
+    function readImage4(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah4').attr('src', e.target.result); // Renderizamos la imagen
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#id_imagen4").change(function () {
+        // Código a ejecutar cuando se detecta un cambio de archivO
+        readImage4(this);
+    });
+
+</script>
+{% endblock js %}

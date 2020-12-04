@@ -19,6 +19,7 @@ from django.conf import settings
 from services.urls import services_urldash
 from trabajos.urls import trabajos_urldash
 from materiales.urls import materiales_urldash
+from productos.urls import productos_urldash
 from core.urls import business_urldash
 from social.urls import link_urldash
 from blog.urls import blog_urldash
@@ -42,6 +43,9 @@ urlpatterns = [
     # url la app de materiales
     path('materiales/', include('materiales.urls')),
     path('dashboard/materiales/', include(materiales_urldash)),
+    # url la app de productos
+    path('productos/', include('productos.urls')),
+    path('dashboard/productos/', include(productos_urldash)),
     # url de la app contacto
     path('contact/', include('contact.urls')),
     # url app social

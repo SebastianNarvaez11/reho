@@ -1,10 +1,10 @@
 {% extends 'core/about.html' %}
 {% load static %}
 
-{% block title %}Tapicería y Restauración de Muebles | Restauramos Hogares | Servicios 🥇⭐{% endblock title %}
+{% block title %}Tapicería y Restauración de Muebles | Restauramos Hogares | Tienda 🥇⭐{% endblock title %}
 
 {% block title_banner %}
-{{servicio.titulo}}
+{{producto.titulo}}
 {% endblock title_banner %}
 
 
@@ -15,15 +15,15 @@
             <div class="row">
                 <div class="col-md-6">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" style="height: 340px;">
-                            {% if servicio.imagen1 %}
+                        <div class="carousel-inner ">
+                            {% if producto.imagen1 %}
                             <div class="carousel-item active ">
-                                <img src="{{servicio.imagen1.url}}" class="d-block w-100 imagen-carrusel" alt="...">
+                                <img src="{{producto.imagen1.url}}" class="d-block w-100 imagen-carrusel" alt="...">
                             </div>
                             {% endif %}
-                            {% if servicio.imagen2 %}
+                            {% if producto.imagen2 %}
                             <div class="carousel-item ">
-                                <img src="{{servicio.imagen2.url}}" class="d-block w-100 imagen-carrusel" alt="...">
+                                <img src="{{producto.imagen2.url}}" class="d-block w-100 imagen-carrusel" alt="...">
                             </div>
                             {% endif %}
                         </div>
@@ -41,20 +41,21 @@
                 </div>
                 <div class="col-md-6">
                     <div class="portfolio_right_text">
-                        <h4 style="font-size: 50px;"><b>{{servicio.titulo}}</b> </h4>
-                        <p>{{servicio.descripcion}}.</p>
+                        <h4><b>{{producto.titulo}}</b> </h4>
+                        <p>{{producto.descripcion}}.</p>
                         <ul class="list">
-                            <li><span>Calidad</span>: <i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                            <li><span>Calificación</span>: <i class="fa fa-star"></i><i class="fa fa-star"></i><i
                                     class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                            <li><span>Categoria</span>: {{producto.get_categoria_display}}
                             </li>
-                            <li><span>Fecha</span>: {{servicio.creacion}}</li>
+                            <li><span>Fecha</span>: {{producto.creacion}}</li>
                         </ul>
-                        <h4 class="mt-5">¿ Esta Interesado ?</h4>
-                        <a class="banner_btn" style="width: 300px;" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZA CON NOSOTROS</a>
+                        <h4 class="mt-5">¿ Necesitas Algo Similar ?</h4>
+                        <a class="banner_btn" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZALO</a>
                     </div>
                 </div>
             </div>
-            <p>{{servicio.contenido|safe}}</p>
+            <p>{{producto.contenido|safe}}</p>
         </div>
     </div>
 </section>
