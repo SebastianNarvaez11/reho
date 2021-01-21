@@ -27,7 +27,8 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*","restauramoshogares.co","restauramoshogares.herokuapp.com", ".herokuapp.com"]
+ALLOWED_HOSTS = ["*", "restauramoshogares.co",
+                 "restauramoshogares.herokuapp.com", ".herokuapp.com"]
 
 
 # Application definition
@@ -180,6 +181,8 @@ LOGOUT_REDIRECT_URL = 'login'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': None,
+        'defaultLanguage': 'es',
+        'language': 'es',
     }
 }
 
