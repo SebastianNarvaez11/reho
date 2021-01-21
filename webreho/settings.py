@@ -146,7 +146,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # para cuando este en produccion, y se haga el  collectstatic
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # para cuando Debug=True y la carpeta static este en la raiz del proyecto porque django se encarga de servir los archivos estaticos
