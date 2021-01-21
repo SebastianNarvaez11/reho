@@ -27,7 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*", ".herokuapp.com"]
 
 
 # Application definition
@@ -96,8 +96,12 @@ WSGI_APPLICATION = 'webreho.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'webreho',
+        'USER': 'postgres',
+        'PASSWORD': 'tatannvrz',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 
@@ -147,7 +151,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # para cuando Debug=True y la carpeta static este en la raiz del proyecto porque django se encarga de servir los archivos estaticos
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # media config
 MEDIA_URL = '/media/'
