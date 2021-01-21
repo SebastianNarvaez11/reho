@@ -22,6 +22,7 @@ mccabe==0.6.1
 # menuinst==1.4.16
 mysql-client==0.0.1
 Pillow==8.0.1
+psycopg2==2.8.6
 pycodestyle==2.5.0
 pycosat==0.6.3
 # pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
