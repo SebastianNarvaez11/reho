@@ -25,7 +25,7 @@ SECRET_KEY = '$wtg_35jys5yy&qk&8k$xoy^5i=#^$^3y47f9^#un*c^p%i&2j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.restauramoshogares.co','restauramoshogares.co','restauramoshogares.pythonanywhere.com', 'localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'core',
     'ckeditor',
     'ckeditor_uploader',
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'webreho.urls'
@@ -169,3 +171,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': None,
     }
 }
+
+
+
+CORS_ORIGIN_ALLOW_ALL = True
