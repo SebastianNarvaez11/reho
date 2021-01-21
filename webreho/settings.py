@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from decouple import config
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$wtg_35jys5yy&qk&8k$xoy^5i=#^$^3y47f9^#un*c^p%i&2j'
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -60,7 +62,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware'
+    'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'webreho.urls'
@@ -88,6 +91,8 @@ WSGI_APPLICATION = 'webreho.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+
 
 DATABASES = {
     'default': {
@@ -136,10 +141,13 @@ USE_TZ = True
 # Si se trabaja con el directorio static en la raiz del proyecto
 # nos ahorraremos espacio en el servidor, ya que collectstatic duplica los archivos estaticos
 STATIC_URL = '/static/'
+
+# para cuando este en produccion, y se haga el  collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # para cuando Debug=True y la carpeta static este en la raiz del proyecto porque django se encarga de servir los archivos estaticos
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')#para cuando este en produccion, y se haga el  collectstatic
-
 
 # media config
 MEDIA_URL = '/media/'
@@ -173,5 +181,7 @@ CKEDITOR_CONFIGS = {
 }
 
 
-
 CORS_ORIGIN_ALLOW_ALL = True
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
