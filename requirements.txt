@@ -10,6 +10,7 @@ conda-package-handling @ file:///C:/ci/conda-package-handling_1603003327818/work
 cryptography @ file:///C:/ci/cryptography_1605526388508/work
 Django==2.2.3
 django-ckeditor==5.7.1
+django-cors-headers==3.6.0
 django-crispy-forms==1.8.1
 django-js-asset==1.2.2
 idna @ file:///tmp/build/80754af9/idna_1593446292537/work
