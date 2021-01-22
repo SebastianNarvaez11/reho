@@ -138,7 +138,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # para cuando Debug=True y la carpeta static este en la raiz del proyecto porque django se encarga de servir los archivos estaticos
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')#para cuando este en produccion, y se haga el  collectstatic
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')#para cuando este en produccion, y se haga el  collectstatic
 
 
 # media config

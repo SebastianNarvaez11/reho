@@ -10,37 +10,36 @@
     <title>{% block title %}Tapicería y Restauración de Muebles | Restauramos Hogares 🥇⭐{% endblock title %}</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/antesydespues.css' %}">
     <link rel="stylesheet" href="{% static 'core/vendors/linericon/style.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'core/vendors/owl-carousel/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'core/vendors/lightbox/simpleLightbox.css' %}">
     <link rel="stylesheet" href="{% static 'core/vendors/nice-select/css/nice-select.css' %}">
     <link rel="stylesheet" href="{% static 'core/vendors/animate-css/animate.css' %}">
     <link rel="stylesheet" href="{% static 'core/vendors/flaticon/flaticon.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
-        integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
     <!-- main css -->
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/responsive.css' %}">
-    <meta name="description"
-        content="Somos Expertos en Tapicería de Muebles, Restauración De Muebles Antiguos, Ebanistería, Tapizado, Retapizado de Muebles. Cali, Valle del Cauca 2020">
-    <meta name="keywords"
-        content="servicio de retapizado, tapizado de muebles, restauracion de muebles, ebanisteria, pintura de muebles, reparacion de muebles, sillones, camas, comedores, restauracion de sillas, cali, valle del cauca">
+    <meta name="description" content="Somos Expertos en Tapicería de Muebles, Restauración De Muebles Antiguos, Ebanistería, Tapizado, Retapizado de Muebles. Cali, Valle del Cauca 2021">
+    <meta name="keywords" content="servicio de retapizado, tapizado de muebles, restauracion de muebles, ebanisteria, pintura de muebles, reparacion de muebles, sillones, camas, comedores, restauracion de sillas, cali, valle del cauca">
     <link rel="canonical" href="http://www.restauramoshogares.co/">
     <meta property="og:locale" content="es_CO">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Tapicería y Restauración de Muebles | Restauramos Hogares 2020">
-    <meta property="og:description"
-        content="servicio de retapizado, ebanisteria, pintura, tapizado de muebles y sillones, reparacion de muebles, sillones, camas, comedores, sillas reclinomatic y mucho más, servicio de cotización en tu casa sin costo ni compromiso">
+    <meta property="og:title" content="Tapicería y Restauración de Muebles | Restauramos Hogares 2021">
+    <meta property="og:description" content="servicio de retapizado, ebanisteria, pintura, tapizado de muebles y sillones, reparacion de muebles, sillones, camas, comedores, sillas reclinomatic y mucho más, servicio de cotización en tu casa sin costo ni compromiso">
     <meta property="og:url" content="http://www.restauramoshogares.co/">
-    <meta property="og:site_name" content="Tapiceria Restauramos Hogares - Cali, Valle del Cauca 2020">
+    <meta property="og:site_name" content="Tapiceria Restauramos Hogares - Cali, Valle del Cauca 2021">
     <meta property="og:image" content="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180784735-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'UA-180784735-1');
@@ -50,7 +49,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-529351750"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'AW-529351750');
@@ -59,8 +61,7 @@
 </head>
 
 <body>
-    <a id="app-whatsapp" target="_blanck"
-        href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">
+    <a id="app-whatsapp" target="_blanck" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -74,9 +75,7 @@
                     <a class="navbar-brand logo_h" href="{% url 'index' %}">
                         <img src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" height="60" alt="logo">
                         <img src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" height="60" alt="logo"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -109,20 +108,16 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="banner_content">
-                            <img class="logo-banner animate__animated animate__fadeIn"
-                                src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" alt="logo">
+                            <img class="logo-banner animate__animated animate__fadeIn" src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" alt="logo">
                             <p class="p-banner">RESTAURAMOS HOGARES</p>
                             <h1 style="font-size: 20px; filter: drop-shadow(2px 4px 6px black); margin-top:100px">
-                                <b>Tapicería y Restauración de Muebles</b>
+                                <b>Tapicería y Restauración de Muebles (Cali-Valle)</b>
                             </h1>
                             <p>
-                                Somos Profesionales Expertos en Tapicería de Muebles, Sillones, Salas, Comedores,
-                                Restauración De Muebles Antiguos, Retapizado de Sillones, Cabeceros de Cama. Te
-                                Ofrecemos Variedad de Colores en Telas de Tapicería. Nuestros Servicios Incluyen
-                                Ebanistería, Pintura, Tapizado, Restauracion Total, Reparaciones. !Visítenos Hoy! <br>
+                                Somos Profesionales Expertos en Tapicería de Muebles, Sillones, Salas, Comedores, Restauración De Muebles Antiguos, Retapizado de Sillones, Cabeceros de Cama. Te Ofrecemos Variedad de Colores en Telas de Tapicería. Nuestros Servicios Incluyen Ebanistería,
+                                Pintura, Tapizado, Restauracion Total, Reparaciones. !Visítenos Hoy! <br>
                             </p>
-                            <a class="banner_btn"
-                                href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZAR</a>
+                            <a class="banner_btn" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZAR</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -178,26 +173,72 @@
         <div class="container">
             <div class="main_title">
                 <h2>Últimos Trabajos</h2>
-                <p>En Restauramos Hogares contamos con las herramientas y experiencia que hace que sus muebles tomen
-                    vida nueva, tapizando con telas de alta calidad y con el mayor cuidado en los detalles.</p>
+                <p style="font-size: 20px;">En Restauramos Hogares contamos con la magia que hara que sus muebles tomen vida nueva, tapizando con telas de alta calidad y con el mayor cuidado en los detalles.</p>
             </div>
             <div class="furniture_inner row">
+
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+
+                    <div id="comparison" class="antesydespues">
+                        <figure class="figure" style=" background-image:url({% static 'core/img/Captura.jpg' %});">
+                            <div id="handle">
+                            </div>
+
+                            <div id="divisor" class="antes" style="background-image: url({% static 'core/img/Captura2.jpg' %});">
+                            </div>
+                        </figure>
+                        <input type="range" min="0" max="100" value="50" id="slider" oninput="moveDivisor()" />
+
+                    </div>
+                    <script type="text/javascript">
+                        //<![CDATA[
+                        var divisor = document.getElementById("divisor"),
+                            handle = document.getElementById("handle"),
+                            slider = document.getElementById("slider");
+
+                        function moveDivisor() {
+                            handle.style.left = slider.value + "%";
+                            divisor.style.width = slider.value + "%";
+                        }
+
+                        window.onload = function() {
+                            moveDivisor();
+                        };
+                        //]]>
+                    </script>
+                    <script type="text/javascript">
+                        //<![CDATA[
+                        // JS BEFORE & AFTER SLIDE Nº1
+                        jQuery.noConflict(), jQuery(document).ready(function() {
+                            var a = jQuery(".img_before"),
+                                b = jQuery(".img_before img").width(),
+                                c = Math.round(b / 2);
+                            a.width(c), jQuery(".before_after_slider").mousemove(function(b) {
+                                var c = b.offsetX || b.clientX - jQueryimg_after.offset().left;
+                                a.width(c)
+                            }), jQuery(".before_after_slider").mouseleave(function(b) {
+                                a.stop().animate({
+                                    width: c
+                                }, 1e3)
+                            })
+                        });
+                        //]]>
+                    </script>
+                </div>
                 {% for trabajo in lista_trabajos %}
-                <div class="col-lg-4">
+                <div class="col-lg-3 col-md-6 mt-5">
                     <a href="{% url 'detalletrabajo' trabajo.slug  %}">
                         <div class="furniture_item">
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner" style="height: 200px;">
                                     {% if trabajo.imagen1 %}
                                     <div class="carousel-item active ">
-                                        <img src="{{trabajo.imagen1.url}}" class="d-block w-100 imagen-carrusel-trabajo"
-                                            alt="...">
+                                        <img src="{{trabajo.imagen1.url}}" class="d-block w-100 imagen-carrusel-trabajo" alt="...">
                                     </div>
-                                    {% endif %}
-                                    {% if trabajo.imagen2 %}
+                                    {% endif %} {% if trabajo.imagen2 %}
                                     <div class="carousel-item ">
-                                        <img src="{{trabajo.imagen2.url}}" class="d-block w-100 imagen-carrusel-trabajo"
-                                            alt="...">
+                                        <img src="{{trabajo.imagen2.url}}" class="d-block w-100 imagen-carrusel-trabajo" alt="...">
                                     </div>
                                     {% endif %}
                                 </div>
@@ -221,35 +262,30 @@
                 <img src="{% static 'core/img/services-img/tapiceria.jpg' %}" alt="" class="imagen">
                 <div class="hover">
                     <h4>Tapicería</h4>
-                    <p>Conservamos los detalles característicos de sus muebles o los adaptamos a nuevos espacios y
-                        necesidades.</p>
+                    <p>Conservamos los detalles característicos de sus muebles o los adaptamos a nuevos espacios y necesidades.
+                    </p>
                 </div>
             </div>
             <div class="projects_item wd_18 contenedor">
                 <img src="{% static 'core/img/services-img/ebanisteria.jpg' %}" alt="" class="imagen">
                 <div class="hover">
                     <h4>Ebanistería</h4>
-                    <p>Los muebles de madera crean ambientes acogedores y su elegancia combina con todos los tipos de
-                        decoración. La carpintería es un arte, del mismo modo que todos los trabajos, y la ebanistería
-                        es la máxima expresión del arte de la carpintería.</p>
+                    <p>Los muebles de madera crean ambientes acogedores y su elegancia combina con todos los tipos de decoración. La carpintería es un arte, del mismo modo que todos los trabajos, y la ebanistería es la máxima expresión del arte de la carpintería.</p>
                 </div>
             </div>
             <div class="projects_item wd_44 contenedor">
                 <img src="{% static 'core/img/services-img/restauracion.jpg' %}" alt="" class="imagen">
                 <div class="hover">
                     <h4>Restauración</h4>
-                    <p>El servicio de retapizado es más que simplemente arreglar un mueble tapizado, es una restauración
-                        completa que incluye el cambio de tapiz, espumas y rellenos, sistema de suspensión ,reparación
-                        de zona dañada de la estructura (si así lo requiere).</p>
+                    <p>El servicio de retapizado es más que simplemente arreglar un mueble tapizado, es una restauración completa que incluye el cambio de tapiz, espumas y rellenos, sistema de suspensión ,reparación de zona dañada de la estructura (si así
+                        lo requiere).</p>
                 </div>
             </div>
             <div class="projects_item wd_18 contenedor">
                 <img src="{% static 'core/img/services-img/pintura.jpg' %}" alt="" class="imagen">
                 <div class="hover">
                     <h4>Pintura</h4>
-                    <p>Con un simple "pintado y encerado" un mueble puede gozar de un cambio espectacular. Dependiendo
-                        del estado de la pieza, no hará falta más. Lo más importante es escoger la pintura y color
-                        adecuado en cada caso.</p>
+                    <p>Con un simple "pintado y encerado" un mueble puede gozar de un cambio espectacular. Dependiendo del estado de la pieza, no hará falta más. Lo más importante es escoger la pintura y color adecuado en cada caso.</p>
                 </div>
             </div>
         </div>
@@ -261,8 +297,7 @@
         <div class="container">
             <div class="main_title">
                 <h2>Cualidades Que Nos Hacen Únicos</h2>
-                <p>Somos un equipo dedicado a la fabricación de muebles tapizados, sofás, sillones, sofás a la medida
-                    para hogar y empresas.</p>
+                <p>Somos un equipo dedicado a la fabricación de muebles tapizados, sofás, sillones, sofás a la medida para hogar y empresas.</p>
             </div>
             <div class="row feature_inner">
                 <div class="col-lg-4 col-md-6">
@@ -282,32 +317,28 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
                         <h4><i class="lnr lnr-phone"></i>Asesoría</h4>
-                        <p>Nuestro equipo de asesores están a su disposición para sacarlo de dudas y que puedas tomar la
-                            mejor decisión.
+                        <p>Nuestro equipo de asesores están a su disposición para sacarlo de dudas y que puedas tomar la mejor decisión.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
                         <h4><i class="lnr lnr-rocket"></i>Puntualidad </h4>
-                        <p>Recogemos y entregamos los muebles en la puerta de tu casa, con máxima puntualidad en la
-                            fecha acordadas.
+                        <p>Recogemos y entregamos los muebles en la puerta de tu casa, con máxima puntualidad en la fecha acordadas.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
                         <h4><i class="lnr lnr-diamond"></i>Resultados de Calidad</h4>
-                        <p>La calidad del resultado de nuestros trabajos es excepcional, te garantizamos una
-                            satisfacción total en tus muebles.
+                        <p>La calidad del resultado de nuestros trabajos es excepcional, te garantizamos una satisfacción total en tus muebles.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
                         <h4><i class="lnr lnr-leaf"></i>Ecológicos</h4>
-                        <p>En REHO somos amigables con el medio ambiente, usamos materiales hechos de recursos
-                            renovables.
+                        <p>En REHO somos amigables con el medio ambiente, usamos materiales hechos de recursos renovables.
                         </p>
                     </div>
                 </div>
@@ -321,8 +352,7 @@
         <div class="container">
             <div class="impress_inner text-center">
                 <h2>te entregamos los mejores<br />materiales y mano de obra de alta calidad</h2>
-                <a class="main_btn"
-                    href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">Cotizar</a>
+                <a class="main_btn" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">Cotizar</a>
             </div>
         </div>
     </section>
@@ -372,8 +402,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <aside class="f_widget ab_widget">
                         <div class="f_title">
-                            <img src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" class="mb-3" height="130"
-                                style="filter: drop-shadow(2px 1px 3px black);" alt="logo">
+                            <img src="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}" class="mb-3" height="130" style="filter: drop-shadow(2px 1px 3px black);" alt="logo">
                             <h3>Tapicería y Restauración de Muebles</h3>
                         </div>
                         Copyright &copy;
@@ -410,19 +439,23 @@
                         <p>Nuestras redes sociales</p>
                         <ul class="list" style="color: white;">
                             {% if LINK_FACEBOOK %}
-                            <li><a href="{{LINK_FACEBOOK}}"> <i class="fab fa-facebook-square fa-5x"></i></a></li>
+                            <li>
+                                <a href="{{LINK_FACEBOOK}}"> <i class="fab fa-facebook-square fa-5x"></i></a>
+                            </li>
 
-                            {% endif %}
-                            {% if LINK_TWITTER %}
-                            <li><a href="{{LINK_TWITTER}}"> <i class="fab fa-twitter fa-5x"></i></a></li>
+                            {% endif %} {% if LINK_TWITTER %}
+                            <li>
+                                <a href="{{LINK_TWITTER}}"> <i class="fab fa-twitter fa-5x"></i></a>
+                            </li>
 
-                            {% endif %}
-                            {% if LINK_INSTAGRAM %}
+                            {% endif %} {% if LINK_INSTAGRAM %}
                             <li><a href="{{LINK_INSTAGRAM}}"><i class="fab fa-instagram fa-5x"></i></a></li>
 
-                            {% endif %}
-                            {% if LINK_YOUTUBE %}
-                            <li><a href="{{LINK_YOUTUBE}}"> <i class="fab fa-youtube fa-5x"></i> </i></a></li>
+                            {% endif %} {% if LINK_YOUTUBE %}
+                            <li>
+                                <a href="{{LINK_YOUTUBE}}"> <i class="fab fa-youtube fa-5x"></i> </i>
+                                </a>
+                            </li>
 
                             {% endif %}
                         </ul>
@@ -456,14 +489,16 @@
     </script>
     <!-- Event snippet for Website traffic conversion page -->
     <script>
-        gtag('event', 'conversion', { 'send_to': 'AW-529351750/WnlfCOX08-8BEMaItfwB' });
+        gtag('event', 'conversion', {
+            'send_to': 'AW-529351750/WnlfCOX08-8BEMaItfwB'
+        });
     </script>
 
-    
+
     {% block control_modal %}
     <script>
         function abrir_modal(url) {
-            $("#popup").load(url, function () {
+            $("#popup").load(url, function() {
                 $(this).modal({
                     backdrop: 'static',
                     keyboard: false
@@ -474,7 +509,7 @@
         }
 
         function cerrar_modal() {
-            $('#popup').on('hidden.bs.modal', function () {
+            $('#popup').on('hidden.bs.modal', function() {
                 $(this).find('form').trigger('reset');
             })
             $('#popup').modal('hide');
@@ -499,15 +534,16 @@
             }
         }
 
-        {% if messages %}
-        {% for message in messages %}
-        mensaje("{{ message }}", "{{ message.tags }}");
-        {% endfor %}
-        {% endif %}
+        { %
+            if messages %
+        } { %
+            for message in messages %
+        }
+        mensaje("{{ message }}", "{{ message.tags }}"); { % endfor %
+        } { % endif %
+        }
     </script>
-    {% endblock control_modal %}
-
-    {% block js %}{% endblock js %}
+    {% endblock control_modal %} {% block js %}{% endblock js %}
 
 </body>
 
