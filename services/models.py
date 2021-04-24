@@ -2,6 +2,7 @@ from django.db import models
 import re
 from ckeditor_uploader.fields import RichTextUploadingField
 from core.validators import *
+import random
 # Create your models here.
 
 def custom_upload_to1(instance, filename):
@@ -36,7 +37,7 @@ class Service(models.Model):
     edicion = models.DateField('Fecha de edicion', auto_now=True)
 
     def save(self, *args, **kwargs):#genera el slug desde el titulo - importar re
-        self.slug = re.sub(r'[^a-z0-9+]', '-', self.titulo.lower())
+        self.slug = re.sub(r'[^a-z0-9+]', '-', self.titulo.lower()) + str(random.randint(0, 9999))
         super(Service, self).save(*args, **kwargs)
 
     class Meta:

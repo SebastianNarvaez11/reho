@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
 from core.validators import *
 from django.utils.timezone import now
+import random
 # Create your models here.
 
 def custom_upload_to(instance, filename):
@@ -29,7 +30,7 @@ class Post(models.Model):
     hora = models.DateTimeField('Hora creacion', auto_now_add=True)
 
     def save(self, *args, **kwargs):
-        self.slug = re.sub(r'[^a-z0-9+]', '-', self.titulo.lower())
+        self.slug = re.sub(r'[^a-z0-9+]', '-', self.titulo.lower()) + str(random.randint(0, 9999))
         super(Post, self).save(*args, **kwargs)
 
     class Meta:
