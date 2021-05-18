@@ -37,7 +37,7 @@ class Service(models.Model):
     edicion = models.DateField('Fecha de edicion', auto_now=True)
 
     def save(self, *args, **kwargs):#genera el slug desde el titulo - importar re
-        self.slug = re.sub(r'[^a-z0-9+]', '-', self.titulo.lower()) + str(random.randint(0, 9999))
+        self.slug = re.sub(r'[^a-z0-9+]', '-', self.titulo.lower())
         super(Service, self).save(*args, **kwargs)
 
     class Meta:
