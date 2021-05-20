@@ -16,7 +16,7 @@ def custom_upload_to(instance, filename):
 
 
 class Post(models.Model):
-    titulo = models.CharField('Titulo', max_length=50, unique=True, validators=[MinLengthValidator(3)])
+    titulo = models.CharField('Titulo', max_length=150, unique=True, validators=[MinLengthValidator(3)])
     descripcion = models.TextField('Descripcion', max_length=200, blank=True, null=True)
     contenido = RichTextUploadingField('Contenido')
     imagen = models.ImageField('Imagen', upload_to=custom_upload_to) 
