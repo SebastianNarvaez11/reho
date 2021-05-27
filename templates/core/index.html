@@ -6,7 +6,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block icon %}
     <link rel="icon" href="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
+    {% endblock icon %}
+    
     <title>{% block title %}Tapicería y Restauración de Muebles | Restauramos Hogares 🥇⭐{% endblock title %}</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
@@ -24,12 +27,14 @@
     <link rel="stylesheet" href="{% static 'core/css/responsive.css' %}">
     <meta name="description" content="Somos Expertos en Tapicería de Muebles, Restauración De Muebles Antiguos, Ebanistería, Tapizado, Retapizado de Muebles. Cali, Valle del Cauca 2021">
     <meta name="keywords" content="servicio de retapizado, tapizado de muebles, restauracion de muebles, ebanisteria, pintura de muebles, reparacion de muebles, sillones, camas, comedores, restauracion de sillas, cali, valle del cauca">
-    <link rel="canonical" href="http://www.restauramoshogares.co/">
+    <link rel="canonical" href="https://www.restauramoshogares.co/">
     <meta property="og:locale" content="es_CO">
     <meta property="og:type" content="website">
+    {% block ogtitle %}
     <meta property="og:title" content="Tapicería y Restauración de Muebles | Restauramos Hogares 2021">
+    {% endblock ogtitle %}
     <meta property="og:description" content="servicio de retapizado, ebanisteria, pintura, tapizado de muebles y sillones, reparacion de muebles, sillones, camas, comedores, sillas reclinomatic y mucho más, servicio de cotización en tu casa sin costo ni compromiso">
-    <meta property="og:url" content="http://www.restauramoshogares.co/">
+    <meta property="og:url" content="https://www.restauramoshogares.co/">
     <meta property="og:site_name" content="Tapiceria Restauramos Hogares - Cali, Valle del Cauca 2021">
     <meta property="og:image" content="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -371,7 +376,7 @@
                 <h2>PUBLICACIONES RECIENTES DE NUESTRO BLOG</h2>
             </div>
             <div class="blog_inner row">
-                {% for post in lista_posts %}
+                {% for post in lista_posts|slice:":3" %}
                 <div class="col-lg-4">
                     <div class="o_blog_item">
                         <div class="blog_img contenedor">
@@ -443,20 +448,20 @@
                         <ul class="list" style="color: white;">
                             {% if LINK_FACEBOOK %}
                             <li>
-                                <a href="{{LINK_FACEBOOK}}"> <i class="fab fa-facebook-square fa-5x"></i></a>
+                                <a href="{{LINK_FACEBOOK}}"> <i class="fab fa-facebook-square fa-3x"></i></a>
                             </li>
 
                             {% endif %} {% if LINK_TWITTER %}
                             <li>
-                                <a href="{{LINK_TWITTER}}"> <i class="fab fa-twitter fa-5x"></i></a>
+                                <a href="{{LINK_TWITTER}}"> <i class="fab fa-twitter fa-3x"></i></a>
                             </li>
 
                             {% endif %} {% if LINK_INSTAGRAM %}
-                            <li><a href="{{LINK_INSTAGRAM}}"><i class="fab fa-instagram fa-5x"></i></a></li>
+                            <li><a href="{{LINK_INSTAGRAM}}"><i class="fab fa-instagram fa-3x"></i></a></li>
 
                             {% endif %} {% if LINK_YOUTUBE %}
                             <li>
-                                <a href="{{LINK_YOUTUBE}}"> <i class="fab fa-youtube fa-5x"></i> </i>
+                                <a href="{{LINK_YOUTUBE}}"> <i class="fab fa-youtube fa-3x"></i> </i>
                                 </a>
                             </li>
 

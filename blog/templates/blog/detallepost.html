@@ -1,7 +1,16 @@
 {% extends 'blog/blog.html' %}
 {% load static %}
 
-{% block title %}Tapicería y Restauración de Muebles | Restauramos Hogares |Blog 🥇⭐{% endblock title %}
+{% block icon %}
+    <link rel="icon" href="{{post.imagen.url}}">
+{% endblock icon %}
+
+{% block title %}{{post.titulo}} | Restauramos Hogares{% endblock title %}
+
+{% block ogtitle %}
+<meta property="og:title" content="{{post.titulo}} | Restauramos Hogares 2021">
+{% endblock ogtitle %}
+
 {% block title_banner %}
 {{ post.titulo }}
 {% endblock title_banner %}
