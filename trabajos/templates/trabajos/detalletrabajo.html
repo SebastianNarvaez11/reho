@@ -13,49 +13,28 @@
     <div class="container">
         <div class="portfolio_details_inner">
             <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div id="comparison" style="height: 450px; max-width: 100%; margin: auto;">
-                        <figure
-                            style="width: 100%; max-width: 100%; height: 100%; max-height: 450px; background-image: url({{ trabajo.imagen2.url }});">
-                            <div id="handle">
-                            </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-item active ">
+                            <a class="venobox" href="{{trabajo.imagen1.url}}"><img
+                                    class="d-block w-100 h-100 imagen-carrusel-trabajo mt-3"
+                                    src="{{trabajo.imagen1.url}}" alt="{{trabajo.titulo}}" /></a>
 
-                            <div id="divisor" style="background-image: url({{ trabajo.imagen1.url }});">
-                            </div>
-                        </figure>
-                        <input type="range" min="0" max="100" value="50" id="slider" oninput="moveDivisor()" />
-
-                    </div>
-                    <a href="{% url 'detalletrabajo' trabajo.slug  %}">
-                        <div class="furniture_item">
-                            <h4>{{ trabajo.titulo }}</h4>
                         </div>
-                    </a>
-                    <script type="text/javascript">
-                        //<![CDATA[
-                        var divisor = document.getElementById("divisor"),
-                            handle = document.getElementById("handle"),
-                            slider = document.getElementById("slider");
-
-                        function moveDivisor() {
-                            handle.style.left = slider.value + "%";
-                            divisor.style.width = slider.value + "%";
-                        }
-
-                        window.onload = function () {
-                            moveDivisor();
-                        };
-                //]]>
-                    </script>
-                    <script type="text/javascript">
-                        //<![CDATA[
-                        // JS BEFORE & AFTER SLIDE Nº1
-                        jQuery.noConflict(), jQuery(document).ready(function () { var a = jQuery(".img_before"), b = jQuery(".img_before img").width(), c = Math.round(b / 2); a.width(c), jQuery(".before_after_slider").mousemove(function (b) { var c = b.offsetX || b.clientX - jQueryimg_after.offset().left; a.width(c) }), jQuery(".before_after_slider").mouseleave(function (b) { a.stop().animate({ width: c }, 1e3) }) });
-                        //]]>
-                    </script>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="portfolio_right_text">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-item active ">
+                            <a class="venobox" href="{{trabajo.imagen2.url}}"><img
+                                    class="d-block w-100 h-100 imagen-carrusel-trabajo mt-3"
+                                    src="{{trabajo.imagen2.url}}" alt="{{trabajo.titulo}}" /></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4  col-lg-12 col-md-12 col-sm-12">
+                    <div class="portfolio_right_text mt-3">
                         <h4><b>{{trabajo.titulo}}</b> </h4>
                         <p>{{trabajo.descripcion}}.</p>
                         <ul class="list">
@@ -66,7 +45,8 @@
                             <li><span>Fecha</span>: {{trabajo.creacion}}</li>
                         </ul>
                         <h4 class="mt-5">¿ Necesitas Algo Similar ?</h4>
-                        <a class="banner_btn" href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZALO</a>
+                        <a class="banner_btn"
+                            href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZALO</a>
                     </div>
                 </div>
             </div>
