@@ -4190,12 +4190,12 @@ h6 {
 }
 
 .clients_logo_area .clients_slider .item img {
-    width: auto;
+    /* width: 400px; */
     text-align: center;
     display: block;
     margin: auto;
     line-height: 70px;
-    opacity: .5;
+    opacity: 1;
     transition: all 300ms linear 0s;
 }
 
@@ -4361,6 +4361,8 @@ h6 {
 .copy_right_text p a {
     color: #31dac5;
 }
+
+
 
 
 /* End Footer Area css

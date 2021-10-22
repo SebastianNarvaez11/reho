@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'core/css/antesydespues.css' %}">
     <link rel="stylesheet" href="{% static 'core/vendors/linericon/style.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/vendors/owl-carousel/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'core/vendors/lightbox/simpleLightbox.css' %}">
     <link rel="stylesheet" href="{% static 'core/vendors/nice-select/css/nice-select.css' %}">
     <link rel="stylesheet" href="{% static 'core/vendors/animate-css/animate.css' %}">
@@ -279,7 +280,6 @@
                 {% endfor %}
                 <div class="col-lg-6">
                     <div class="main_title">
-                        <h2>Mira Todo Nuestro Portafolio</h2>
                         <a class="banner_btn" href="{% url 'trabajos' %}">VER MAS TRABAJOS</a>
                     </div>
                 </div>
@@ -287,6 +287,62 @@
         </div>
     </section>
     <!--================End Furniture Area =================-->
+
+    <!--================Impress Area =================-->
+    <section class="impress_area p_120">
+        <div class="container">
+            <div class="impress_inner text-center">
+                <h2>te entregamos los mejores<br />materiales y mano de obra de alta calidad</h2>
+                <a class="main_btn"
+                    href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">Cotizar</a>
+            </div>
+        </div>
+    </section>
+    <!--================End Impress Area =================-->
+
+    <!--================Clients Logo Area =================-->
+    <section class="clients_logo_area p_120">
+        <div class="main_title">
+            <h2>Testimonios de nuestros clientes</h2>
+            <p>Todo lo hacemos muy bien, desde el corazón y con pasión. Algunos de nuestros clientes lo confirman. Puedes ver mas reseñas en nuestra <a href="https://www.google.com/search?q=restauramos+hogares&rlz=1C1VDKB_esCO929CO929&oq=res&aqs=chrome.1.69i60j69i59j69i57j69i60l3j69i65l2.4491j0j7&sourceid=chrome&ie=UTF-8#lrd=0x8e30a75bd5f9484b:0x54d5cd7316b9dd58,1,,,">Ficha de Google</a></p>
+        </div>
+        <div class="container">
+            <div class="clients_slider owl-carousel">
+                <div class="item">
+                    <img src="{% static 'core/img/reseñas/7.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'core/img/reseñas/18.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'core/img/reseñas/16.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'core/img/reseñas/15.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'core/img/reseñas/12.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'core/img/reseñas/5.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'core/img/reseñas/17.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'core/img/reseñas/13.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'core/img/reseñas/1.jpg' %}" alt="">
+                </div>
+                <div class="item">
+                    <img src="{% static 'core/img/reseñas/14.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Clients Logo Area =================-->
+
 
     <!--================Projects Area =================-->
     <section class="projects_area">
@@ -392,17 +448,8 @@
     </section>
     <!--================End Feature Area =================-->
 
-    <!--================Impress Area =================-->
-    <section class="impress_area p_120">
-        <div class="container">
-            <div class="impress_inner text-center">
-                <h2>te entregamos los mejores<br />materiales y mano de obra de alta calidad</h2>
-                <a class="main_btn"
-                    href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">Cotizar</a>
-            </div>
-        </div>
-    </section>
-    <!--================End Impress Area =================-->
+    
+    
 
     <!--================Our Blog Area =================-->
     <section class="our_blog_area p_120">

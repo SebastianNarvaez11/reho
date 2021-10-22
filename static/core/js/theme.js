@@ -40,7 +40,7 @@
             $('.clients_slider').owlCarousel({
                 loop:true,
                 margin: 30,
-                items: 5,
+                items: 3,
                 nav: false,
                 autoplay: false,
                 smartSpeed: 1500,
@@ -57,10 +57,10 @@
                         items: 3,
                     },
                     768: {
-                        items: 4,
+                        items: 3,
                     },
                     992: {
-                        items: 5,
+                        items: 3,
                     }
                 }
             })
