@@ -5,6 +5,7 @@ from .views import *
 urlpatterns = [
     path('', views.materiales, name='materiales'),
     path('<slug:slug_material>/', views.detallematerial, name='detallematerial'),
+    path('telas/prana/', views.prana, name='prana'),
 ]
 
 materiales_urldash = ([

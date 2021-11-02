@@ -9,7 +9,8 @@
 	<div class="container">
 		<div class="main_title">
 			<h2>Usamos materiales de alta calidad</h2>
-			<p>En Restauramos Hogares empleamos materiales de excelente calidad, buscando elegancia y confort en nuestro resultados, sin olvidarnos del medio ambiente.</p>
+			<p>En Restauramos Hogares empleamos materiales de excelente calidad, buscando elegancia y confort en nuestro
+				resultados, sin olvidarnos del medio ambiente.</p>
 		</div>
 		<div class="row d-flex justify-content-between">
 			<div class="col-lg-4 col-md-4 col-sm-12">
@@ -50,42 +51,42 @@
 
 <section class=" furniture_area p_120">
 				<div class="container">
-					<div class="furniture_inner row">
-						{% for material in telas %}
-						<div class="col-lg-6">
-							<div class="row mt-5">
-								<div class="col-lg-6">
-									<a href="{% url 'detallematerial' material.slug  %}">
-										<div class="furniture_item">
-											<div class="contenedor">
-												<img class="img-fluid imagen-trabajo" src="{{ material.imagen1.url }}"
-													alt="">
-											</div>
-											<h4>{{ material.titulo }}</h4>
+
+					<div class="col-lg-6">
+						<div class="row mt-5">
+							<div class="col-lg-6">
+								<a href="{% url 'prana' %}">
+									<div class="furniture_item">
+										<div class="contenedor">
+											<img class="img-fluid imagen-telas"
+												src="{% static 'core/img/telas/prannas/pranna.jpg' %}" alt="">
 										</div>
-									</a>
-								</div>
-								<div class="col-lg-6">
-									<div class="portfolio_right_text">
-										<h4><b>{{material.titulo}}</b> </h4>
-										<p style="text-align: justify;">{{material.descripcion}}.</p>
-										<ul class="list">
-											<li><span>Calidad</span>:
-												<i class="fa fa-star" style="color : #facb48;"></i>
-												<i class="fa fa-star" style="color : #facb48;"></i>
-												<i class="fa fa-star" style="color : #facb48;"></i>
-												<i class="fa fa-star" style="color : #facb48;"></i>
-												<i class="fa fa-star" style="color : #facb48;"></i>
-											</li>
-											<li><span>Fecha</span>: {{material.creacion}}</li>
-										</ul>
-										<a class="banner_btn mt-3"
-											href="{% url 'detallematerial' material.slug  %}">SABER MAS</a>
+										<h4>Prana Sintético</h4>
 									</div>
+								</a>
+							</div>
+							<div class="col-lg-6">
+								<div class="portfolio_right_text">
+									<h4><b>Prana Sintético</b> </h4>
+									<p style="text-align: justify;">
+										El Prana es un material sintético para muebles, es de alta durabilidad, con
+										características especiales que lo diferencian de otros, tales como su
+										impermeabilidad, es antibacterial, resistente al desgaste y a la luz, fácil de
+										limpiar y cuenta con una amplia gama de colores.
+									</p>
+									<ul class="list">
+										<li><span>Calidad</span>:
+											<i class="fa fa-star" style="color : #facb48;"></i>
+											<i class="fa fa-star" style="color : #facb48;"></i>
+											<i class="fa fa-star" style="color : #facb48;"></i>
+											<i class="fa fa-star" style="color : #facb48;"></i>
+											<i class="fa fa-star" style="color : #facb48;"></i>
+										</li>
+									</ul>
+									<a class="banner_btn mt-3" href="{% url 'prana' %}">VER CATALOGO</a>
 								</div>
 							</div>
 						</div>
-						{% endfor %}
 					</div>
 				</div>
 </section>
@@ -109,8 +110,7 @@
 						<a href="{% url 'detallematerial' material.slug  %}">
 							<div class="furniture_item">
 								<div class="contenedor">
-									<img class="img-fluid imagen-trabajo" src="{{ material.imagen1.url }}"
-										alt="">
+									<img class="img-fluid imagen-telas" src="{{ material.imagen1.url }}" alt="">
 								</div>
 								<h4>{{ material.titulo }}</h4>
 							</div>
@@ -130,8 +130,7 @@
 								</li>
 								<li><span>Fecha</span>: {{material.creacion}}</li>
 							</ul>
-							<a class="banner_btn mt-3"
-								href="{% url 'detallematerial' material.slug  %}">SABER MAS</a>
+							<a class="banner_btn mt-3" href="{% url 'detallematerial' material.slug  %}">SABER MAS</a>
 						</div>
 					</div>
 				</div>
@@ -161,8 +160,7 @@
 						<a href="{% url 'detallematerial' material.slug  %}">
 							<div class="furniture_item">
 								<div class="contenedor">
-									<img class="img-fluid imagen-trabajo" src="{{ material.imagen1.url }}"
-										alt="">
+									<img class="img-fluid imagen-telas" src="{{ material.imagen1.url }}" alt="">
 								</div>
 								<h4>{{ material.titulo }}</h4>
 							</div>
@@ -182,8 +180,7 @@
 								</li>
 								<li><span>Fecha</span>: {{material.creacion}}</li>
 							</ul>
-							<a class="banner_btn mt-3"
-								href="{% url 'detallematerial' material.slug  %}">SABER MAS</a>
+							<a class="banner_btn mt-3" href="{% url 'detallematerial' material.slug  %}">SABER MAS</a>
 						</div>
 					</div>
 				</div>
