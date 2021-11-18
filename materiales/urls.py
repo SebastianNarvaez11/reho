@@ -9,6 +9,8 @@ urlpatterns = [
     path('telas/cuerotext/', views.cuerotext, name='cuerotext'),
     path('telas/bisont/', views.bisont, name='bisont'),
     path('telas/capadocia/', views.capadocia, name='capadocia'),
+    path('telas/acqua/', views.acqua, name='acqua'),
+    path('telas/betel/', views.betel, name='betel')
 ]
 
 materiales_urldash = ([
