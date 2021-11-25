@@ -10,7 +10,11 @@ urlpatterns = [
     path('telas/bisont/', views.bisont, name='bisont'),
     path('telas/capadocia/', views.capadocia, name='capadocia'),
     path('telas/acqua/', views.acqua, name='acqua'),
-    path('telas/betel/', views.betel, name='betel')
+    path('telas/betel/', views.betel, name='betel'),
+    path('telas/dominio/', views.dominio, name='dominio'),
+    path('telas/bizantino/', views.bizantino, name='bizantino'),
+    path('telas/berbera/', views.berbera, name='berbera'),
+    path('telas/agata/', views.agata, name='agata')
 ]
 
 materiales_urldash = ([
