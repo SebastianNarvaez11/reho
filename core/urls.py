@@ -4,6 +4,7 @@ from .views import BusinessUpdateCreate, BusinessUpdateView
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('lavanderia/', views.lavanderia, name='lavanderia'),
     path('sitemap/', views.sitemap, name='sitemap'),
     path('about/', views.about, name='about'),
 ]

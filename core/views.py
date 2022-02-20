@@ -16,8 +16,11 @@ from django.urls import reverse
 from django.core.mail import EmailMessage
 
 # Create your views here.
+
+
 def sitemap(request):
     return render(request, 'core/sitemap.xml')
+
 
 def index(request):
     if not Business.objects.all():
@@ -54,6 +57,43 @@ def index(request):
                 return redirect(reverse('index')+"?fail")
 
     return render(request, 'core/index.html', {'lista_posts': posts, 'lista_trabajos': trabajos, 'formulario': suscribe_form})
+
+
+def lavanderia(request):
+    if not Business.objects.all():
+        Business.objects.create(nombre='nombreempresa', lema='lemaempresa', logo='null',
+                                email='email@gmail.com', direccion='direccionempresa', telefonos='123456', wpp='31231',
+                                horarios='horariosbusiness', descripcion='', mision='', vision='',
+                                historia='', creacion='', edicion='')
+        return redirect('business_urldash:create', pk=1)
+
+    posts = Post.objects.all()
+    trabajos = Trabajo.objects.filter(index=True)
+
+    suscribe_form = SuscribeForm()
+    if request.method == "POST":
+        # Optiene los datos del formulario
+        suscribe_form = SuscribeForm(data=request.POST)
+        if suscribe_form.is_valid():
+            asunto = 'Solicitud de Suscripcion'
+            email = request.POST.get('email', '')
+            contenido = 'Hola, me gustaria suscribirme a su lista de correos electronicos'
+            # ENVIAMOS EL CORREO
+            email = EmailMessage(
+                "Sitio Web - {}".format(asunto),  # Asunto del mensaje
+                "Email: <{}> \n\nEscribio: \n\n{} ".format(
+                    email, contenido),  # estructura del mensaje
+                "testing.developer.404@gmail.com",  # email de origen
+                ["narvaez.jhoan@correounivalle.edu.co"],  # email de destino
+                reply_to=[email]
+            )
+            try:
+                email.send()
+                return redirect(reverse('index')+"?ok")
+            except:
+                return redirect(reverse('index')+"?fail")
+
+    return render(request, 'core/lavanderia.html', {'lista_posts': posts, 'lista_trabajos': trabajos, 'formulario': suscribe_form})
 
 
 def about(request):
