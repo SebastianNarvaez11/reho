@@ -35,19 +35,19 @@
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/responsive.css' %}">
     <meta name="description"
-        content="Somos Expertos en Tapicería de Muebles, Restauración De Muebles Antiguos, Ebanistería, Tapizado, Retapizado de Muebles. Cali, Valle del Cauca 2021">
+        content="Somos Expertos en Tapicería de Muebles, Restauración De Muebles Antiguos, Ebanistería, Tapizado, Retapizado de Muebles. Cali, Valle del Cauca 2022">
     <meta name="keywords"
         content="servicio de retapizado, tapizado de muebles, restauracion de muebles, ebanisteria, pintura de muebles, reparacion de muebles, sillones, camas, comedores, restauracion de sillas, cali, valle del cauca">
     <link rel="canonical" href="https://www.restauramoshogares.co/">
     <meta property="og:locale" content="es_CO">
     <meta property="og:type" content="website">
     {% block ogtitle %}
-    <meta property="og:title" content="Tapicería y Restauración de Muebles | Restauramos Hogares 2021">
+    <meta property="og:title" content="Tapicería y Restauración de Muebles | Restauramos Hogares 2022">
     {% endblock ogtitle %}
     <meta property="og:description"
-        content="servicio de retapizado, ebanisteria, pintura, tapizado de muebles y sillones, reparacion de muebles, sillones, camas, comedores, sillas reclinomatic y mucho más, servicio de cotización en tu casa sin costo ni compromiso">
+        content="servicio de retapizado, ebanisteria, pintura, tapizado de muebles y sillones, lavanderia, reparacion de muebles, sillones, camas, comedores, sillas reclinomatic y mucho más, servicio de cotización en tu casa sin costo ni compromiso">
     <meta property="og:url" content="https://www.restauramoshogares.co/">
-    <meta property="og:site_name" content="Tapiceria Restauramos Hogares - Cali, Valle del Cauca 2021">
+    <meta property="og:site_name" content="Tapiceria Restauramos Hogares - Cali, Valle del Cauca 2022">
     <meta property="og:image" content="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180784735-1"></script>
@@ -167,15 +167,16 @@
                             <h1 style="font-size: 20px; filter: drop-shadow(2px 4px 6px black); margin-top:100px">
                                 <b>Tapicería y Lavanderia Restauramos Hogares (Cali-Valle)</b>
                             </h1>
-                            <p>
-                                Somos Profesionales Expertos en Tapicería de Muebles, Sillones, Salas, Comedores,
-                                Restauración De Muebles Antiguos, Retapizado de Sillones, Cabeceros de Cama. Te
-                                Ofrecemos Variedad de Colores en Telas de Tapicería. Nuestros Servicios Incluyen
-                                Ebanistería,
-                                Pintura, Tapizado, Restauracion Total, Reparaciones. !Visítenos Hoy! <br>
+                            <p style="font-size: 20px; text-shadow: 0px 0px 20px black;">
+                                Somos una empresa de tapicería y lavandería sustentable que utiliza todos los recursos
+                                de un mueble poco útil para que se convierta en el centro de atracción de tu sala.
+                                A través de los máximos estándares de calidad, con ayuda de tapiceros, ebanistas y
+                                costureros profesionales, hacemos magia en sofás deteriorados o pasados de moda.
+                                Estamos ubicados en Cali y trabajamos en todo el Valle del Cauca.
+                                ¡Conócenos más!
+                                <br>
                             </p>
-                            <a class="banner_btn"
-                                href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZAR</a>
+                            <a class="banner_btn" href="#cualidades">¡Conócenos más!</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -230,9 +231,10 @@
     <section class="furniture_area p_120">
         <div class="container">
             <div class="main_title">
-                <h2>Últimos Trabajos</h2>
-                <p style="font-size: 20px;">En Restauramos Hogares contamos con la magia que hara que sus muebles tomen
-                    vida nueva, tapizando con telas de alta calidad y con el mayor cuidado en los detalles.</p>
+                <h2>Tienes en casa una mina de oro... ¡Ese sofá antiguo es tu mayor tesoro! </h2>
+                <p style="font-size: 20px;">Los muebles de las décadas pasadas se elaboraban con pino, roble, ciprés o
+                    cedro... Entonces, no compres productos de gama baja: Aprovecha la estructura de tu mueble viejo y
+                    moderniza su exterior con REHO. ¡Mira lo que hacemos por ti!</p>
             </div>
             <div class="furniture_inner row">
 
@@ -327,7 +329,9 @@
     <section class="impress_area p_120">
         <div class="container">
             <div class="impress_inner text-center">
-                <h2>te entregamos los mejores<br />materiales y mano de obra de alta calidad</h2>
+                <h2 style="text-shadow: 0px 0px 20px black;">
+                    Perdemos 48.000 hectáreas anuales en Colombia por la deforestación. REHO contribuye a que no se
+                    talen 8 a 10 árboles semanales... <br> ¡Participa en estas restauraciones con propósito!</h2>
                 <a class="main_btn"
                     href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">Cotizar</a>
             </div>
@@ -336,13 +340,18 @@
     <!--================End Impress Area =================-->
 
     <!--================Clients Logo Area =================-->
+
     <section class="clients_logo_area p_120">
-        <div class="main_title">
-            <h2>Testimonios de nuestros clientes</h2>
-            <p>Todo lo hacemos muy bien, desde el corazón y con pasión. Algunos de nuestros clientes lo confirman.
-                Puedes ver mas reseñas en nuestra <a
-                    href="https://www.google.com/search?q=restauramos+hogares&rlz=1C1VDKB_esCO929CO929&oq=res&aqs=chrome.1.69i60j69i59j69i57j69i60l3j69i65l2.4491j0j7&sourceid=chrome&ie=UTF-8#lrd=0x8e30a75bd5f9484b:0x54d5cd7316b9dd58,1,,,">Ficha
-                    de Google</a></p>
+        <div class="container">
+            <div class="main_title">
+                <h2>Testimonios de nuestros clientes</h2>
+                <p style="font-size: 20px;">El propósito con el que trabajamos se reduce a amor, pasión y calidad. Nos
+                    sentimos orgullosos de tener clientes felices pertenecientes a la familia REHO, y hoy queremos
+                    compartir
+                    algunos de ellos con ustedes. Puedes ver más reseñas en nuestra <a
+                        href="https://www.google.com/search?q=restauramos+hogares&rlz=1C1VDKB_esCO929CO929&oq=res&aqs=chrome.1.69i60j69i59j69i57j69i60l3j69i65l2.4491j0j7&sourceid=chrome&ie=UTF-8#lrd=0x8e30a75bd5f9484b:0x54d5cd7316b9dd58,1,,,">Ficha
+                        de Google</a></p>
+            </div>
         </div>
         <div class="container">
             <div class="clients_slider owl-carousel">
@@ -427,38 +436,45 @@
     <!--================End Projects Area =================-->
 
     <!--================Feature Area =================-->
-    <section class="feature_area p_120">
+    <section id="cualidades" class="feature_area p_120">
         <div class="container">
             <div class="main_title">
                 <h2>Cualidades Que Nos Hacen Únicos</h2>
-                <p>Somos un equipo dedicado a la fabricación de muebles tapizados, sofás, sillones, sofás a la medida
-                    para hogar y empresas.</p>
+                <p style="font-size: 20px;">Modificamos el color de tu sofá, el tipo de tela, piezas rotas, el acabado y
+                    la calidad del producto,
+                    mientras entre todos hacemos parte del cambio ambiental. Pero eso no lo es todo:</p>
             </div>
             <div class="row feature_inner">
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-user"></i>Personal Experto</h4>
-                        <p>Nuestro equipo de tapiceros, ebanistas y costureros, están altamente capacitados en sus áreas
+                    <div class="feature_item" style="height: 90%;">
+                        <h4><i class="lnr lnr-user"></i>Trabajo hecho a mano</h4>
+                        <p>Con más de 20 colaboradores, REHO reconoce la importancia de la mano humana en la
+                            restauración de muebles.
+                            Contamos con procesos totalmente artesanales y trabajadores expertos para conseguir
+                            resultados mejores que los que sueñas.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-license"></i>Servicio Garantizado</h4>
-                        <p>Todos nuestros trabajos, servicios y materiales se entregan con su correspondiente garantia.
+                    <div class="feature_item" style="height: 90%;">
+                        <h4><i class="lnr lnr-license"></i>Accesibilidad</h4>
+                        <p>Manejamos presupuestos diferentes para que la calidad no sacrifique tu cuenta de banco.
+                            Conversa con nuestro equipo sobre los detalles de tu mueble y déjate sorprender con costos
+                            adaptados a tu medida.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-phone"></i>Asesoría</h4>
-                        <p>Nuestro equipo de asesores están a su disposición para sacarlo de dudas y que puedas tomar la
-                            mejor decisión.
+                    <div class="feature_item" style="height: 90%;">
+                        <h4><i class="lnr lnr-phone"></i>Asesoría personalizada</h4>
+                        <p>Nuestro equipo de asesores conocen sobre muebles, materiales y los procesos para restaurarlos
+                            tanto como cualquier profesional en REHO. Conversa con ellos y comparte todas tus
+                            inquietudes para que recibas soluciones a la medida.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
+                    <div class="feature_item" style="height: 90%;">
                         <h4><i class="lnr lnr-rocket"></i>Puntualidad </h4>
                         <p>Recogemos y entregamos los muebles en la puerta de tu casa, con máxima puntualidad en la
                             fecha acordadas.
@@ -466,18 +482,22 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-diamond"></i>Resultados de Calidad</h4>
-                        <p>La calidad del resultado de nuestros trabajos es excepcional, te garantizamos una
-                            satisfacción total en tus muebles.
+                    <div class="feature_item" style="height: 90%;">
+                        <h4><i class="lnr lnr-diamond"></i>Compromiso</h4>
+                        <p>No vendemos muebles, transformamos objetos poco satisfactorios a otros que cumplan tus
+                            expectativas. Para lograrlo, te ofrecemos variedad de colores en telas de tapicería y
+                            servicios que van desde la ebanistería, pintura, tapizado, hasta reparaciones y la
+                            restauración total.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-leaf"></i>Ecológicos</h4>
-                        <p>En REHO somos amigables con el medio ambiente, usamos materiales hechos de recursos
-                            renovables.
+                    <div class="feature_item" style="height: 90%;">
+                        <h4><i class="lnr lnr-leaf"></i>Ecologismo</h4>
+                        <p>Mejoramos muebles ya existentes con materiales hechos de recursos renovables, evitando que
+                            adquieras unos nuevos que implique más contaminación.
+                            Hacemos todas las transformaciones necesarias hasta que se te olvide que varias generaciones
+                            ya han hecho vida en esos espacios.
                         </p>
                     </div>
                 </div>

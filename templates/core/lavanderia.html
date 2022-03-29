@@ -35,19 +35,19 @@
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/responsive.css' %}">
     <meta name="description"
-        content="Somos Expertos en Tapicería de Muebles, Restauración De Muebles Antiguos, Ebanistería, Tapizado, Retapizado de Muebles. Cali, Valle del Cauca 2021">
+        content="Somos Expertos en Tapicería de Muebles, Restauración De Muebles Antiguos, Ebanistería, Tapizado, Retapizado de Muebles. Cali, Valle del Cauca 2022">
     <meta name="keywords"
-        content="servicio de retapizado, tapizado de muebles, restauracion de muebles, ebanisteria, pintura de muebles, reparacion de muebles, sillones, camas, comedores, restauracion de sillas, cali, valle del cauca">
+        content="servicio de retapizado, tapizado de muebles, restauracion de muebles, lavanderia, ebanisteria, pintura de muebles, reparacion de muebles, sillones, camas, comedores, restauracion de sillas, cali, valle del cauca">
     <link rel="canonical" href="https://www.restauramoshogares.co/lavanderia">
     <meta property="og:locale" content="es_CO">
     <meta property="og:type" content="website">
     {% block ogtitle %}
-    <meta property="og:title" content="Tapicería y Restauración de Muebles | Restauramos Hogares 2021">
+    <meta property="og:title" content="Tapicería y Restauración de Muebles | Restauramos Hogares 2022">
     {% endblock ogtitle %}
     <meta property="og:description"
-        content="servicio de retapizado, ebanisteria, pintura, tapizado de muebles y sillones, reparacion de muebles, sillones, camas, comedores, sillas reclinomatic y mucho más, servicio de cotización en tu casa sin costo ni compromiso">
+        content="servicio de retapizado, ebanisteria, pintura, tapizado de muebles y sillones, lavanderia, lavado, reparacion de muebles, sillones, camas, comedores, sillas reclinomatic y mucho más, servicio de cotización en tu casa sin costo ni compromiso">
     <meta property="og:url" content="https://www.restauramoshogares.co/lavanderia">
-    <meta property="og:site_name" content="Tapiceria Restauramos Hogares - Cali, Valle del Cauca 2021">
+    <meta property="og:site_name" content="Tapiceria Restauramos Hogares - Cali, Valle del Cauca 2022">
     <meta property="og:image" content="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
 
 
@@ -144,16 +144,15 @@
                             <h1 style="font-size: 20px; filter: drop-shadow(2px 4px 6px black); margin-top:100px">
                                 <b>Tapicería y Lavanderia Restauramos Hogares (Cali-Valle)</b>
                             </h1>
-                            <p>
-                                Somos Profesionales Expertos en Lavandería, ofrecemos un servicio especializado y
-                                profesional para el lavado de muebles, sofás y poltronas, que asegura los mejores
-                                resultados en la limpieza de su hogar y por ende en el bienestar de su familia, clientes
-                                y empleados.
-                                Contamos con procesos especializados que permiten obtener excelentes resultados de una
-                                manera rápida y eficiente. !Visítanos Hoy! <br>
+                            <p style="font-size: 20px;">
+                                Somos una empresa de tapicería y lavandería sustentable que utiliza todos los recursos
+                                de un mueble poco útil para que se convierta en el centro de atracción de tu sala.
+                                A través de los máximos estándares de calidad, con ayuda de tapiceros, ebanistas y
+                                costureros profesionales, hacemos magia en sofás deteriorados o pasados de moda.
+                                Estamos ubicados en Cali y trabajamos en todo el Valle del Cauca.
+                                <br>
                             </p>
-                            <a class="banner_btn"
-                                href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;cotizar&nbsp;con&nbsp;ustedes">COTIZAR</a>
+                            <a class="banner_btn" href="#cualidades">¡Conócenos más!</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -195,7 +194,7 @@
     <!--================Furniture Area =================-->
     {% block content %}
 
-    <section class="feature_area p_120">
+    <section id="cualidades"  class="feature_area p_120">
         <div class="container">
             <div class="row feature_inner">
                 <div class="main_title">
