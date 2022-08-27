@@ -1,0 +1,87 @@
+{% extends 'core/about.html' %}
+{% load static %}
+
+{% block title %}Tapicería y Restauración de Muebles | Restauramos Hogares | Tienda 🥇⭐{% endblock title %}
+
+{% block title_banner %}
+{{producto.titulo}}
+{% endblock title_banner %}
+
+
+{% block content %}
+<section class="portfolio_details_area p_120">
+    <div class="container">
+        <div class="portfolio_details_inner">
+            <div class="row">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-item active ">
+                            <a class="venobox" href="{{producto.imagen1.url}}"><img
+                                    class="d-block w-100 h-100 imagen-carrusel-producto mt-3"
+                                    src="{{producto.imagen1.url}}" alt="{{producto.titulo}}" /></a>
+
+                        </div>
+                    </div>
+                </div>
+
+                {% if producto.imagen2 %}
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-item active ">
+                            <a class="venobox" href="{{producto.imagen2.url}}"><img
+                                    class="d-block w-100 h-100 imagen-carrusel-producto mt-3"
+                                    src="{{producto.imagen2.url}}" alt="{{producto.titulo}}" /></a>
+
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if producto.imagen3 %}
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-item active ">
+                            <a class="venobox" href="{{producto.imagen3.url}}"><img
+                                    class="d-block w-100 h-100 imagen-carrusel-producto mt-3"
+                                    src="{{producto.imagen3.url}}" alt="{{producto.titulo}}" /></a>
+
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if producto.imagen4 %}
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-item active ">
+                            <a class="venobox" href="{{producto.imagen4.url}}"><img
+                                    class="d-block w-100 h-100 imagen-carrusel-producto mt-3"
+                                    src="{{producto.imagen4.url}}" alt="{{producto.titulo}}" /></a>
+
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="col-xl-4  col-lg-12 col-md-12 col-sm-12">
+                    <div class="portfolio_right_text mt-3">
+                        <h4><b>{{producto.titulo}}</b> </h4>
+                        <p>{{producto.descripcion}}.</p>
+                        <ul class="list">
+                            <li><span>Calificación</span>: <i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                            <li><span>Categoria</span>: {{producto.get_categoria_display}}
+                            </li>
+                            <li><span>Fecha</span>: {{producto.creacion}}</li>
+                        </ul>
+                        <h4 class="mt-5">¿ Necesitas Algo Similar ?</h4>
+                        <a class="banner_btn"
+                            href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=¡Hola!&nbsp;Buen&nbsp;día.&nbsp;Vengo&nbsp;de&nbsp;visitar&nbsp;su&nbsp;sitio&nbsp;web&nbsp;y&nbsp;me&nbsp;interesa&nbsp;realizar&nbsp;una&nbsp;cotizacíon.">COTIZALO</a>
+                    </div>
+                </div>
+            </div>
+            <p>{{producto.contenido|safe}}</p>
+        </div>
+    </div>
+</section>
+{% endblock content %}
