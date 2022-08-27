@@ -19,7 +19,8 @@
 					{% for producto in nuevos %}
 					<div class="col-lg-3 col-md-4 mb-3">
 						<div class="card ">
-							<a href="{% url 'detalleproducto' producto.slug  %}"><img class="card-img-top" src="{{producto.imagen1.url}}" alt=""></a>
+							<a href="{% url 'detalleproducto' producto.slug  %}"><img class="card-img-top"
+									src="{{producto.imagen1.url}}" alt=""></a>
 							<div class="card-body">
 								<h4 class="card-title">
 									<a href="{% url 'detalleproducto' producto.slug  %}">{{producto.titulo}}</a>
@@ -44,7 +45,8 @@
 					{% for producto in restaurados %}
 					<div class="col-lg-3 col-md-4 mb-3">
 						<div class="card ">
-							<a href="{% url 'detalleproducto' producto.slug  %}"><img class="card-img-top" src="{{producto.imagen1.url}}" alt=""></a>
+							<a href="{% url 'detalleproducto' producto.slug  %}"><img class="card-img-top"
+									src="{{producto.imagen1.url}}" alt=""></a>
 							<div class="card-body">
 								<h4 class="card-title">
 									<a href="{% url 'detalleproducto' producto.slug  %}">{{producto.titulo}}</a>
