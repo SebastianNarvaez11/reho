@@ -14,9 +14,10 @@
     <div class="container">
         <div class="portfolio_details_inner">
             <div class="row">
-                <div class="col-6">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="row">
-                        <div id="carouselExampleIndicators" class="col-6 carousel slide" data-ride="carousel">
+                        {% if producto.imagen2 %}
+                        <div id="carouselExampleIndicators" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 carousel slide" data-ride="carousel">
                             <div class="carousel-item active ">
                                 <a class="venobox" href="{{producto.imagen1.url}}"><img
                                         class="d-block w-100 h-100 imagen-carrusel-producto mt-3"
@@ -24,8 +25,18 @@
 
                             </div>
                         </div>
+                        {% else %}
+                        <div id="carouselExampleIndicators" class="col-12 carousel slide" data-ride="carousel">
+                            <div class="carousel-item active ">
+                                <a class="venobox" href="{{producto.imagen1.url}}"><img
+                                        class="d-block w-100 h-100 imagen-carrusel-producto mt-3"
+                                        src="{{producto.imagen1.url}}" alt="{{producto.titulo}}" /></a>
+
+                            </div>
+                        </div>
+                        {% endif %}
                         {% if producto.imagen2 %}
-                        <div id="carouselExampleIndicators" class="col-6 carousel slide" data-ride="carousel">
+                        <div id="carouselExampleIndicators" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 carousel slide" data-ride="carousel">
                             <div class="carousel-item active ">
                                 <a class="venobox" href="{{producto.imagen2.url}}"><img
                                         class="d-block w-100 h-100 imagen-carrusel-producto mt-3"
@@ -35,7 +46,7 @@
                         </div>
                         {% endif %}
                         {% if producto.imagen3 %}
-                        <div id="carouselExampleIndicators" class="col-6 carousel slide" data-ride="carousel">
+                        <div id="carouselExampleIndicators" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 carousel slide" data-ride="carousel">
                             <div class="carousel-item active ">
                                 <a class="venobox" href="{{producto.imagen3.url}}"><img
                                         class="d-block w-100 h-100 imagen-carrusel-producto mt-3"
@@ -45,7 +56,7 @@
                         </div>
                         {% endif %}
                         {% if producto.imagen4 %}
-                        <div id="carouselExampleIndicators" class="col-6 carousel slide" data-ride="carousel">
+                        <div id="carouselExampleIndicators" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 carousel slide" data-ride="carousel">
                             <div class="carousel-item active ">
                                 <a class="venobox" href="{{producto.imagen4.url}}"><img
                                         class="d-block w-100 h-100 imagen-carrusel-producto mt-3"
