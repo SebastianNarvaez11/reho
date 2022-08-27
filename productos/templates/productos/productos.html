@@ -1,5 +1,7 @@
 {% extends 'core/about.html' %}
 {% load static %}
+{% load humanize %}
+
 {% block title %}Tapicería y Restauración de Muebles | Restauramos Hogares | Productos 🥇⭐{% endblock title %}
 
 {% block title_banner %}Tienda{% endblock title_banner %}
@@ -22,7 +24,7 @@
 								<h4 class="card-title">
 									<a href="{% url 'detalleproducto' producto.slug  %}">{{producto.titulo}}</a>
 								</h4>
-								<h5>$ {{producto.valor}} COP</h5>
+								<h5>$ {{producto.valor|intcomma}} COP</h5>
 								<a href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;comprar&nbsp;el&nbsp;mueble&nbsp;'{{producto.titulo}}'&nbsp;que&nbsp;tienen&nbsp;en&nbsp;la&nbsp;tienda"
 									class="btn btn-success btn-block text-white">Comprar <i
 										class="fab fa-whatsapp"></i></a>
@@ -47,7 +49,7 @@
 								<h4 class="card-title">
 									<a href="{% url 'detalleproducto' producto.slug  %}">{{producto.titulo}}</a>
 								</h4>
-								<h5>$ {{producto.valor}} COP</h5>
+								<h5>$ {{producto.valor|intcomma}} COP</h5>
 								<a href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=Hola!&nbsp;quisiera&nbsp;comprar&nbsp;el&nbsp;mueble&nbsp;'{{producto.titulo}}'&nbsp;que&nbsp;tienen&nbsp;en&nbsp;la&nbsp;tienda"
 									class="btn btn-success btn-block text-white">Comprar <i
 										class="fab fa-whatsapp"></i></a>
