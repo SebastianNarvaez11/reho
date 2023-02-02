@@ -10,7 +10,7 @@
     <link rel="icon" href="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
     {% endblock icon %}
 
-    <title>{% block title %}Tapicería y Restauración de Muebles | Restauramos Hogares 🥇⭐{% endblock title %}</title>
+    <title>{% block title %}Lavanderia de muebles | Restauramos Hogares 🥇⭐{% endblock title %}</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/antesydespues.css' %}">
@@ -34,20 +34,25 @@
     <!-- visor de fotos -->
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/responsive.css' %}">
-    <meta name="description"
-        content="Somos Expertos en Tapicería de Muebles, Restauración De Muebles Antiguos, Ebanistería, Tapizado, Retapizado de Muebles. Cali, Valle del Cauca 2022">
-    <meta name="keywords"
-        content="servicio de retapizado, tapizado de muebles, restauracion de muebles, lavanderia, ebanisteria, pintura de muebles, reparacion de muebles, sillones, camas, comedores, restauracion de sillas, cali, valle del cauca">
     <link rel="canonical" href="https://www.restauramoshogares.co/lavanderia">
+
+    <meta name="description"
+        content="REHO es una empresa de lavandería de muebles en Cali, Colombia que ofrece servicios de limpieza a domicilio de cortinas, alfombras, colchones, cojinería de autos, muebles, sofás y sillas de oficina.">
+    <meta name="keywords"
+        content="lavandería, muebles, Cali, Colombia, domicilio, cortinas, alfombras, colchones, cojinería de autos, sofás, sillas de oficina, limpieza">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="es">
+
     <meta property="og:locale" content="es_CO">
     <meta property="og:type" content="website">
     {% block ogtitle %}
-    <meta property="og:title" content="Tapicería y Restauración de Muebles | Restauramos Hogares 2022">
+    <meta property="og:title" content="Lavanderia | Restauramos Hogares 2023">
     {% endblock ogtitle %}
     <meta property="og:description"
-        content="servicio de retapizado, ebanisteria, pintura, tapizado de muebles y sillones, lavanderia, lavado, reparacion de muebles, sillones, camas, comedores, sillas reclinomatic y mucho más, servicio de cotización en tu casa sin costo ni compromiso">
+        content="REHO es una empresa de lavandería de muebles en Cali, Colombia que ofrece servicios de limpieza a domicilio de cortinas, alfombras, colchones, cojinería de autos, muebles, sofás y sillas de oficina.">
     <meta property="og:url" content="https://www.restauramoshogares.co/lavanderia">
-    <meta property="og:site_name" content="Tapiceria Restauramos Hogares - Cali, Valle del Cauca 2022">
+    <meta property="og:site_name" content="Lavanderia Restauramos Hogares - Cali, Valle del Cauca 2023">
     <meta property="og:image" content="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
 
 
@@ -55,39 +60,8 @@
 
 <body>
 
-    <!-- Messenger Plugin de chat Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Plugin de chat code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <script>
-        var chatbox = document.getElementById('fb-customer-chat');
-        chatbox.setAttribute("page_id", "102185204927524");
-        chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    <script>
-        window.fbAsyncInit = function () {
-            FB.init({
-                xfbml: true,
-                version: 'v13.0'
-            });
-        };
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
     <a id="app-whatsapp" target="_blanck"
-        href="https://api.whatsapp.com/send?phone=+57{{BUSINESS.wpp}}&amp;text=¡Hola!&nbsp;Buen&nbsp;día.&nbsp;Vengo&nbsp;de&nbsp;visitar&nbsp;su&nbsp;sitio&nbsp;web&nbsp;y&nbsp;me&nbsp;interesa&nbsp;realizar&nbsp;una&nbsp;cotizacíon.">
+        href="https://api.whatsapp.com/send?phone=+573152553409&amp;text=¡Hola!&nbsp;Buen&nbsp;día.&nbsp;Vengo&nbsp;de&nbsp;visitar&nbsp;su&nbsp;sitio&nbsp;web&nbsp;y&nbsp;me&nbsp;interesa&nbsp;realizar&nbsp;una&nbsp;cotizacíon&nbsp;de&nbsp;lavanderia.">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -145,10 +119,11 @@
                                 <b>Tapicería y Lavanderia Restauramos Hogares (Cali-Valle)</b>
                             </h1>
                             <p style="font-size: 20px;">
-                                Somos una empresa de tapicería y lavandería sustentable que utiliza todos los recursos
-                                de un mueble poco útil para que se convierta en el centro de atracción de tu sala.
-                                A través de los máximos estándares de calidad, con ayuda de tapiceros, ebanistas y
-                                costureros profesionales, hacemos magia en sofás deteriorados o pasados de moda.
+                                Limpiamos y renovamos tus muebles con cuidado. Somos una empresa de lavandería de
+                                muebles en Cali, Colombia, comprometida con la sustentabilidad y la calidad. Utilizamos
+                                técnicas y productos ecológicos para darle a tus muebles una segunda oportunidad. Con
+                                nuestro equipo de expertos en lavandería de muebles, brindamos un servicio excepcional
+                                que dejará tus muebles como nuevos. ¡Confía en nosotros para darle vida a tus muebles!
                                 <br>
                             </p>
                             <a class="banner_btn" href="#cualidades">¡Conócenos más!</a>
@@ -156,35 +131,48 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="home_right_box">
-                            <div class="home_item mensaje">
-                                <img src="{% static 'core/img/icons/plancha-de-vapor.png' %}" height="70px"
-                                    alt="restauracion total">
-                                <p class="oculta">Vapor</p>
-                            </div>
-                            <div class="home_item mensaje">
+                            <a href="#cualidades">
+                                <div class="home_item mensaje">
+                                    <img src="{% static 'core/img/icons/plancha-de-vapor.png' %}" height="70px"
+                                        alt="restauracion total">
+                                    <p class="oculta">Eficiencia</p>
+                            </a>
+                        </div>
+                        <div class="home_item mensaje">
+                            <a href="#cualidades">
                                 <img src="{% static 'core/img/icons/cepillar.png' %}" height="70px" alt="ebanisteria">
                                 <p class="oculta">Cepillo electrico</p>
-                            </div>
-                            <div class="home_item mensaje">
+                            </a>
+
+                        </div>
+                        <div class="home_item mensaje">
+                            <a href="#cualidades">
                                 <img src="{% static 'core/img/icons/espuma.png' %}" height="70px" alt="pintura">
                                 <p class="oculta">Espumera</p>
-                            </div>
-                            <div class="home_item mensaje">
+                            </a>
+                        </div>
+                        <div class="home_item mensaje">
+                            <a href="#cualidades">
                                 <img src="{% static 'core/img/icons/aspiradora.png' %}" height="70px" alt="tapiceria">
                                 <p class="oculta">Secador</p>
-                            </div>
-                            <div class="home_item mensaje">
+                            </a>
+                        </div>
+                        <div class="home_item mensaje">
+                            <a href="#cualidades">
                                 <img src="{% static 'core/img/icons/inyeccion.png' %}" height="70px" alt="reparacion">
                                 <p class="oculta">Inyeccion</p>
-                            </div>
-                            <div class="home_item mensaje">
+                            </a>
+                        </div>
+                        <div class="home_item mensaje">
+                            <a href="#cualidades">
                                 <img src="{% static 'core/img/icons/sofa.png' %}" height="70px" alt="fabricacion">
                                 <p class="oculta">Resultados</p>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     {% endblock banner %}
@@ -192,6 +180,55 @@
 
     <!--================Furniture Area =================-->
     {% block content %}
+
+    <section id="cualidades" class="feature_area" style="padding-top: 50px;">
+        <div class="container">
+            <div class="row feature_inner">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature_item" style="padding: 15px;">
+                        <h4><i class="lnr lnr-checkmark-circle"></i>Lavado de muebles y sillas de oficina</h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature_item" style="padding: 15px;">
+                        <h4><i class="lnr lnr-checkmark-circle"></i>Lavado de colchones, alfombras y cortinas</h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature_item" style="padding: 15px;">
+                        <h4><i class="lnr lnr-checkmark-circle"></i>Lavado completo de cojineria de autos</h4>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="cualidades" class="feature_area" style="padding-top: 80px;">
+        <div class="container">
+            <div class="row feature_inner">
+                <div class="main_title">
+                    <h2>Una muestra de nuestro trabajo</h2>
+                    <p style="font-size: 20px;">
+                        Con nuestro proceso de lavado y limpieza profunda, tus muebles quedarán como nuevos. Ven y ve la
+                        magia con tus propios ojos en nuestras muestras de trabajo. ¡Confía en nosotros para restaurar
+                        tus hogares!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects_area" style="margin-left: 50px; margin-right: 50px; margin-top: -50px;">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <img src="{% static 'core/img/lavanderia-sofa.jpg' %}" width="100%" alt="">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <img src="{% static 'core/img/lavanderia-colchon.jpg' %}" width="100%" alt="">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <img src="{% static 'core/img/lavanderia-sofa2.jpg' %}" width="100%" alt="">
+            </div>
+        </div>
+    </section>
 
     <section id="cualidades" class="feature_area p_120">
         <div class="container">
@@ -204,7 +241,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <h4><i class="lnr lnr-checkmark-circle"></i>Vapor</h4>
+                        <h4><i class="lnr lnr-checkmark-circle"></i>Eficiencia</h4>
                         <p>Lavado más profundo con vapor, el vapor llega hasta el interior del mueble o colchón, para
                             desinfección y eliminación de bichos como ácaros y eliminar olores
                         </p>
@@ -213,8 +250,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
                         <h4><i class="lnr lnr-checkmark-circle"></i>Inyección</h4>
-                        <p>Esta máquina inyecta agua al mueble para juagar y retirar productos aplicados al colchón o
-                            mueble, además da un mejor acabado.
+                        <p>Un servicio de lavandería eficiente le permite a nuestros clientes recibir sus
+                            muebles limpios y renovados de manera oportuna y sin inconvenientes
                         </p>
                     </div>
                 </div>
@@ -258,7 +295,18 @@
     <section class="projects_area">
         <div class="row m0">
             <div class="projects_item wd_18 contenedor">
-                <img src="{% static 'core/img/lavanderia2.jpg' %}" alt="" class="imagen">
+                <img src="{% static 'core/img/personal-lavanderia5.jpg' %}" alt="" class="imagen">
+                <div class="hover">
+                    <h4>Cojineria de Autos</h4>
+                    <p>Una solución eficiente y conveniente
+                        para mantener su automóvil fresco y limpio. Ofrecemos un servicio profesional y de alta calidad
+                        para lavar y desinfectar los cojines de su vehículo, eliminando la suciedad, el polvo y los
+                        olores no deseados.
+                    </p>
+                </div>
+            </div>
+            <div class="projects_item wd_18 contenedor">
+                <img src="{% static 'core/img/personal-lavanderia3.jpg' %}" alt="" class="imagen">
                 <div class="hover">
                     <h4>Lavado de Muebles y Sofás</h4>
                     <p>Servicio especializado de Lavado de muebles, poltronas y sofás, prestamos nuestros servicios a
@@ -266,16 +314,8 @@
                     </p>
                 </div>
             </div>
-            <div class="projects_item wd_18 contenedor">
-                <img src="{% static 'core/img/lavanderia1.jpg' %}" alt="" class="imagen">
-                <div class="hover">
-                    <h4>Limpieza y Lavado de Colchones</h4>
-                    <p>Lavado de colchones a domicilio, incluye desodorizado, lavado en seco, lavado manual y con
-                        maquinas, aspirado, colchones secos en pocas horas..</p>
-                </div>
-            </div>
             <div class="projects_item wd_44 contenedor">
-                <img src="{% static 'core/img/lavanderia4.jpg' %}" alt="" class="imagen">
+                <img src="{% static 'core/img/personal-lavanderia4.jpg' %}" alt="" class="imagen">
                 <div class="hover">
                     <h4>Servicio de calidad</h4>
                     <p>A través de estos procesos especializados obtendremos un optimo lavado de muebles, una limpieza
@@ -284,9 +324,9 @@
                 </div>
             </div>
             <div class="projects_item wd_18 contenedor">
-                <img src="{% static 'core/img/lavanderia3.jpg' %}" alt="" class="imagen">
+                <img src="{% static 'core/img/personal-lavanderia1.jpg' %}" alt="" class="imagen">
                 <div class="hover">
-                    <h4>Lavado de Alfombras y Tapetes</h4>
+                    <h4>Lavado de Alfombras, Tapetes Y Cortinas</h4>
                     <p>Lavado especializado de alfombras y tapetes, recogemos a domicilio en Cali sin costo
                         adicional, limpieza profunda, excelentes resultados.</p>
                 </div>
@@ -343,7 +383,7 @@
     </section>
     <!--================End Clients Logo Area =================-->
 
-    <section class="projects_area mb-5">
+    <!-- <section class="projects_area mb-5">
         <div class="row m0">
             <div class="projects_item wd_18 contenedor">
                 <img src="{% static 'core/img/lavanderia7.jpg' %}" alt="" class="imagen">
@@ -358,7 +398,7 @@
                 <img src="{% static 'core/img/lavanderia8.jpg' %}" alt="" class="imagen">
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
@@ -379,7 +419,7 @@
                                 style="filter: drop-shadow(2px 1px 3px black);" alt="logo">
                             <h3>Tapicería y Restauración de Muebles</h3>
                         </div>
-                        Copyright &copy;2022 Todos los derechos reservados | Restauramos Hogares
+                        Copyright &copy;2023 Todos los derechos reservados | Restauramos Hogares
                         </p>
                     </aside>
                 </div>

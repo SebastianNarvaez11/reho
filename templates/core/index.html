@@ -35,19 +35,20 @@
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/responsive.css' %}">
     <meta name="description"
-        content="Somos Expertos en Tapicería de Muebles, Restauración De Muebles Antiguos, Ebanistería, Tapizado, Retapizado de Muebles. Cali, Valle del Cauca 2022">
+        content="Somos Expertos en Tapicería de Muebles, Restauración De Muebles Antiguos, Ebanistería, Tapizado, Retapizado de Muebles. Cali, Valle del Cauca 2023">
     <meta name="keywords"
         content="servicio de retapizado, tapizado de muebles, restauracion de muebles, ebanisteria, pintura de muebles, reparacion de muebles, sillones, camas, comedores, restauracion de sillas, cali, valle del cauca">
     <link rel="canonical" href="https://www.restauramoshogares.co/">
+    
     <meta property="og:locale" content="es_CO">
     <meta property="og:type" content="website">
     {% block ogtitle %}
-    <meta property="og:title" content="Tapicería y Restauración de Muebles | Restauramos Hogares 2022">
+    <meta property="og:title" content="Tapicería y Restauración de Muebles | Restauramos Hogares 2023">
     {% endblock ogtitle %}
     <meta property="og:description"
         content="servicio de retapizado, ebanisteria, pintura, tapizado de muebles y sillones, lavanderia, reparacion de muebles, sillones, camas, comedores, sillas reclinomatic y mucho más, servicio de cotización en tu casa sin costo ni compromiso">
     <meta property="og:url" content="https://www.restauramoshogares.co/">
-    <meta property="og:site_name" content="Tapiceria Restauramos Hogares - Cali, Valle del Cauca 2022">
+    <meta property="og:site_name" content="Tapiceria Restauramos Hogares - Cali, Valle del Cauca 2023">
     <meta property="og:image" content="{% if BUSINESS.logo %}{{BUSINESS.logo.url}}{% endif %}">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180784735-1"></script>
@@ -186,31 +187,31 @@
                                 </a>
                             </div>
                             <div class="home_item mensaje">
-                                <a href="{% url 'services' %}">
+                                <a href="{% url 'trabajos' %}">
                                     <img src="{% static 'core/img/icons/ebanisteria.png' %}" alt="ebanisteria">
                                     <p class="oculta">Ebanisteria</p>
                                 </a>
                             </div>
                             <div class="home_item mensaje">
-                                <a href="{% url 'services' %}">
+                                <a href="{% url 'trabajos' %}">
                                     <img src="{% static 'core/img/icons/brocha.png' %}" alt="pintura">
                                     <p class="oculta">Pintura</p>
                                 </a>
                             </div>
                             <div class="home_item mensaje">
-                                <a href="{% url 'services' %}">
+                                <a href="{% url 'materiales' %}">
                                     <img src="{% static 'core/img/icons/tapiceria.png' %}" alt="tapiceria">
                                     <p class="oculta">Tapiceria</p>
                                 </a>
                             </div>
                             <div class="home_item mensaje">
-                                <a href="{% url 'services' %}">
+                                <a href="{% url 'trabajos' %}">
                                     <img src="{% static 'core/img/icons/reparacion.png' %}" alt="reparacion">
                                     <p class="oculta">Reparación</p>
                                 </a>
                             </div>
                             <div class="home_item mensaje">
-                                <a href="{% url 'services' %}">
+                                <a href="{% url 'trabajos' %}">
                                     <img src="{% static 'core/img/icons/sofa.png' %}" alt="fabricacion">
                                     <p class="oculta">Fabricación</p>
                                 </a>
@@ -555,7 +556,7 @@
                                 style="filter: drop-shadow(2px 1px 3px black);" alt="logo">
                             <h3>Tapicería y Restauración de Muebles</h3>
                         </div>
-                        Copyright &copy;2022 Todos los derechos reservados | Restauramos Hogares
+                        Copyright &copy;2023 Todos los derechos reservados | Restauramos Hogares
                         </p>
                     </aside>
                 </div>
